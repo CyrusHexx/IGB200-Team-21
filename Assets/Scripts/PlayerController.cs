@@ -68,6 +68,6 @@ public class PlayerController : MonoBehaviour
         playerPosZ = GameObject.Find("Player").transform.position.z;
 
         // Update the camera to be at the same positon as the player
-        Camera.transform.position = new Vector3(playerPosX, 55, playerPosZ - 5);
+        Camera.transform.position = new Vector3(playerPosX, 60, playerPosZ - 3);
     }
 }
