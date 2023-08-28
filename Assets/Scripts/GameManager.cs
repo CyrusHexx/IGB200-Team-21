@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public Appliance[] appliances; // Reference to all appliances
     public float switchInterval = 5f; // Time between random switches
     public Slider loadSlider; // Reference to the UI Slider
-    public float maxLoad = 300f; // Maximum load before game over
+    public float maxLoad = 100f; // Maximum load before game over
     private float currentLoad;
 
     private void Awake()

@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 20.0f; // Speed at which the player moves
     public float rotationSpeed = 700.0f; // Speed at which the player rotates
     private CharacterController controller; // Reference to the Character Controller component
+    public GameObject Camera; // Reference to the Scene camera
+    private float playerPosX;
+    private float playerPosZ;
 
     private void Start()
     {
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         MovePlayer(); // Handles player movement
+        UpdateCamera(); // Updates Camera movement to follow player
 
         // Check for the "K" key press
         if (Input.GetKeyDown(KeyCode.K))
@@ -55,5 +59,15 @@ public class PlayerController : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
+    }
+
+    private void UpdateCamera()
+    {
+        // Get player's current position in the game world
+        playerPosX = GameObject.Find("Player").transform.position.x;
+        playerPosZ = GameObject.Find("Player").transform.position.z;
+
+        // Update the camera to be at the same positon as the player
+        Camera.transform.position = new Vector3(playerPosX, 60, playerPosZ - 3);
     }
 }
