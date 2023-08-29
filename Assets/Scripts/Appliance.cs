@@ -8,6 +8,7 @@ public class Appliance : MonoBehaviour
     public Color onColor = Color.red; // Color when the appliance is on
     public Color offColor = Color.green; // Color when the appliance is off
     private bool isOn;
+    public bool inGhostRange;
 
     private Renderer rend; // Reference to the Renderer component
 
@@ -16,7 +17,7 @@ public class Appliance : MonoBehaviour
         rend = GetComponent<Renderer>(); // Get the Renderer component
 
         // Randomly set initial state
-        isOn = Random.Range(0, 2) == 0;
+        isOn = false;
 
         // Update the load meter based on the initial state
         if (isOn)
@@ -43,4 +44,21 @@ public class Appliance : MonoBehaviour
     }
 
     public bool IsOn() => isOn;
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Ghost")
+        {
+            inGhostRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Ghost")
+        {
+            inGhostRange = false;
+        }
+    }
 }
