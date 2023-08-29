@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 21026949}
   m_Layer: 0
   m_Name: R4_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -369,6 +369,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &28107623
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,8 +481,8 @@ GameObject:
   - component: {fileID: 43609865}
   - component: {fileID: 43609864}
   m_Layer: 0
-  m_Name: R2_App_2
-  m_TagString: Untagged
+  m_Name: R13_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -516,6 +517,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &43609865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -593,8 +595,8 @@ GameObject:
   - component: {fileID: 57706975}
   - component: {fileID: 57706974}
   m_Layer: 0
-  m_Name: R3_App_3
-  m_TagString: Untagged
+  m_Name: R9_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -629,6 +631,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &57706975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -803,8 +806,8 @@ GameObject:
   - component: {fileID: 89205306}
   - component: {fileID: 89205305}
   m_Layer: 0
-  m_Name: R2_App_1
-  m_TagString: Untagged
+  m_Name: R13_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -839,6 +842,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &89205306
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +1018,7 @@ GameObject:
   - component: {fileID: 99274918}
   m_Layer: 0
   m_Name: R4_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -1112,6 +1116,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &107866619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,8 +1131,8 @@ GameObject:
   - component: {fileID: 107866622}
   - component: {fileID: 107866621}
   m_Layer: 0
-  m_Name: R5_App_2
-  m_TagString: Untagged
+  m_Name: R15_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -1162,6 +1167,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &107866622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1914,8 +1920,8 @@ GameObject:
   - component: {fileID: 240212703}
   - component: {fileID: 240212702}
   m_Layer: 0
-  m_Name: R3_App_2
-  m_TagString: Untagged
+  m_Name: R14_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -1950,6 +1956,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &240212703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2046,6 +2053,18 @@ MonoBehaviour:
   - {fileID: 264003939}
   - {fileID: 1784393315}
   - {fileID: 755616996}
+  - {fileID: 1780026255}
+  - {fileID: 1919326125}
+  - {fileID: 1953222486}
+  - {fileID: 1007715847}
+  - {fileID: 1081741675}
+  - {fileID: 1700797378}
+  - {fileID: 1273849908}
+  - {fileID: 316524924}
+  - {fileID: 930240958}
+  - {fileID: 1709795672}
+  - {fileID: 561971931}
+  - {fileID: 2020326454}
   - {fileID: 2109516347}
   - {fileID: 1801756410}
   - {fileID: 762311269}
@@ -2062,6 +2081,43 @@ MonoBehaviour:
   - {fileID: 1301065525}
   - {fileID: 1133729756}
   - {fileID: 1006852762}
+  - {fileID: 473492321}
+  - {fileID: 1127232254}
+  - {fileID: 935783796}
+  - {fileID: 2044455869}
+  - {fileID: 290458152}
+  - {fileID: 1229219860}
+  - {fileID: 437756435}
+  - {fileID: 57706974}
+  - {fileID: 1004510242}
+  - {fileID: 1245104231}
+  - {fileID: 1699381230}
+  - {fileID: 1094545947}
+  - {fileID: 930264830}
+  - {fileID: 1888658369}
+  - {fileID: 1767772690}
+  - {fileID: 405144447}
+  - {fileID: 89205305}
+  - {fileID: 43609864}
+  - {fileID: 409012514}
+  - {fileID: 937827399}
+  - {fileID: 240212702}
+  - {fileID: 803906292}
+  - {fileID: 1111861540}
+  - {fileID: 107866621}
+  - {fileID: 600567979}
+  - {fileID: 409970222}
+  - {fileID: 1284628482}
+  - {fileID: 1361529738}
+  - {fileID: 1393116497}
+  - {fileID: 1916124744}
+  - {fileID: 1033588312}
+  - {fileID: 1177368570}
+  - {fileID: 1682959602}
+  - {fileID: 1880996132}
+  - {fileID: 268420801}
+  - {fileID: 1183290663}
+  - {fileID: 290693162}
   switchInterval: 3
   loadSlider: {fileID: 1037779812}
   maxLoad: 100
@@ -2095,7 +2151,7 @@ GameObject:
   - component: {fileID: 264003939}
   m_Layer: 0
   m_Name: Op_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -2193,6 +2249,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &268420799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,8 +2264,8 @@ GameObject:
   - component: {fileID: 268420802}
   - component: {fileID: 268420801}
   m_Layer: 0
-  m_Name: R2_App_1
-  m_TagString: Untagged
+  m_Name: R20_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -2243,6 +2300,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &268420802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2514,8 +2572,8 @@ GameObject:
   - component: {fileID: 290458153}
   - component: {fileID: 290458152}
   m_Layer: 0
-  m_Name: R2_App_3
-  m_TagString: Untagged
+  m_Name: R8_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -2550,6 +2608,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &290458153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2627,8 +2686,8 @@ GameObject:
   - component: {fileID: 290693163}
   - component: {fileID: 290693162}
   m_Layer: 0
-  m_Name: R2_App_3
-  m_TagString: Untagged
+  m_Name: R20_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -2663,6 +2722,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &290693163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2971,8 +3031,8 @@ GameObject:
   - component: {fileID: 316524925}
   - component: {fileID: 316524924}
   m_Layer: 0
-  m_Name: Op_App_2 (1)
-  m_TagString: Untagged
+  m_Name: Op_App_11
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3007,6 +3067,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &316524925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3070,6 +3131,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316524922}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &355439028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355439033}
+  - component: {fileID: 355439032}
+  - component: {fileID: 355439031}
+  - component: {fileID: 355439030}
+  - component: {fileID: 355439029}
+  - component: {fileID: 355439034}
+  m_Layer: 0
+  m_Name: Ghost
+  m_TagString: Ghost
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &355439029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4405b4fa2ebb484582e0e78f9984a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &355439030
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.75
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &355439031
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 58e50438253972547a742ceb2a14c98e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &355439032
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &355439033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -65.9, y: 3.4, z: 82.98}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &355439034
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355439028}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &359902778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3347,7 @@ GameObject:
   - component: {fileID: 366699472}
   m_Layer: 0
   m_Name: R3_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3256,6 +3445,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &392360194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,8 +3654,8 @@ GameObject:
   - component: {fileID: 405144448}
   - component: {fileID: 405144447}
   m_Layer: 0
-  m_Name: R6_App_4
-  m_TagString: Untagged
+  m_Name: R12_App_4
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3500,6 +3690,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &405144448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3577,8 +3768,8 @@ GameObject:
   - component: {fileID: 409012515}
   - component: {fileID: 409012514}
   m_Layer: 0
-  m_Name: R2_App_3
-  m_TagString: Untagged
+  m_Name: R13_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3613,6 +3804,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &409012515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3690,8 +3882,8 @@ GameObject:
   - component: {fileID: 409970223}
   - component: {fileID: 409970222}
   m_Layer: 0
-  m_Name: R6_App_2
-  m_TagString: Untagged
+  m_Name: R16_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3726,6 +3918,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &409970223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3803,8 +3996,8 @@ GameObject:
   - component: {fileID: 437756436}
   - component: {fileID: 437756435}
   m_Layer: 0
-  m_Name: R3_App_2
-  m_TagString: Untagged
+  m_Name: R9_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -3839,6 +4032,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &437756436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4013,8 +4207,8 @@ GameObject:
   - component: {fileID: 473492322}
   - component: {fileID: 473492321}
   m_Layer: 0
-  m_Name: R1_App_1
-  m_TagString: Untagged
+  m_Name: R7_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -4049,6 +4243,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &473492322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4304,7 +4499,7 @@ GameObject:
   - component: {fileID: 503621458}
   m_Layer: 0
   m_Name: R5_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -4402,6 +4597,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &519652620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,7 +4722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535262852}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -34.4, y: 4.9, z: 23}
+  m_LocalPosition: {x: -34.1, y: 4.9, z: 23}
   m_LocalScale: {x: 7, y: 10, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4610,8 +4806,8 @@ GameObject:
   - component: {fileID: 561971932}
   - component: {fileID: 561971931}
   m_Layer: 0
-  m_Name: Op_App_1 (5)
-  m_TagString: Untagged
+  m_Name: Op_App_14
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -4646,6 +4842,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &561971932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4759,8 +4956,8 @@ GameObject:
   - component: {fileID: 600567980}
   - component: {fileID: 600567979}
   m_Layer: 0
-  m_Name: R6_App_1
-  m_TagString: Untagged
+  m_Name: R16_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -4795,6 +4992,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &600567980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5452,7 +5650,7 @@ GameObject:
   - component: {fileID: 755616996}
   m_Layer: 0
   m_Name: Op_App_3
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -5550,6 +5748,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &762311264
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,7 +5764,7 @@ GameObject:
   - component: {fileID: 762311269}
   m_Layer: 0
   m_Name: R2_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -5663,6 +5862,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &765511028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,7 +5975,7 @@ GameObject:
   - component: {fileID: 790632839}
   m_Layer: 0
   m_Name: R3_App_3
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -5873,6 +6073,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &796167821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,8 +6182,8 @@ GameObject:
   - component: {fileID: 803906293}
   - component: {fileID: 803906292}
   m_Layer: 0
-  m_Name: R3_App_3
-  m_TagString: Untagged
+  m_Name: R14_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6017,6 +6218,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &803906293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6229,7 +6431,7 @@ GameObject:
   - component: {fileID: 843781770}
   m_Layer: 0
   m_Name: R3_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6327,6 +6529,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &869013912
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,8 +6790,8 @@ GameObject:
   - component: {fileID: 930240959}
   - component: {fileID: 930240958}
   m_Layer: 0
-  m_Name: Op_App_1 (3)
-  m_TagString: Untagged
+  m_Name: Op_App_12
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6623,6 +6826,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &930240959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6700,8 +6904,8 @@ GameObject:
   - component: {fileID: 930264831}
   - component: {fileID: 930264830}
   m_Layer: 0
-  m_Name: R6_App_1
-  m_TagString: Untagged
+  m_Name: R12_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6736,6 +6940,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &930264831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6813,8 +7018,8 @@ GameObject:
   - component: {fileID: 935783797}
   - component: {fileID: 935783796}
   m_Layer: 0
-  m_Name: R2_App_1
-  m_TagString: Untagged
+  m_Name: R8_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6849,6 +7054,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &935783797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6926,8 +7132,8 @@ GameObject:
   - component: {fileID: 937827400}
   - component: {fileID: 937827399}
   m_Layer: 0
-  m_Name: R3_App_1
-  m_TagString: Untagged
+  m_Name: R14_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -6962,6 +7168,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &937827400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7472,8 +7679,8 @@ GameObject:
   - component: {fileID: 1004510243}
   - component: {fileID: 1004510242}
   m_Layer: 0
-  m_Name: R4_App_1
-  m_TagString: Untagged
+  m_Name: R10_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -7508,6 +7715,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1004510243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7586,7 +7794,7 @@ GameObject:
   - component: {fileID: 1006852762}
   m_Layer: 0
   m_Name: R6_App_4
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -7684,6 +7892,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1007715845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7698,8 +7907,8 @@ GameObject:
   - component: {fileID: 1007715848}
   - component: {fileID: 1007715847}
   m_Layer: 0
-  m_Name: Op_App_1 (1)
-  m_TagString: Untagged
+  m_Name: Op_App_7
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -7734,6 +7943,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1007715848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7812,7 +8022,7 @@ GameObject:
   - component: {fileID: 1011628911}
   m_Layer: 0
   m_Name: R2_App_3
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -7910,6 +8120,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1012454582
 GameObject:
   m_ObjectHideFlags: 0
@@ -8021,8 +8232,8 @@ GameObject:
   - component: {fileID: 1033588313}
   - component: {fileID: 1033588312}
   m_Layer: 0
-  m_Name: R5_App_1
-  m_TagString: Untagged
+  m_Name: R18_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -8057,6 +8268,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1033588313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8226,7 +8438,7 @@ GameObject:
   - component: {fileID: 1039069362}
   m_Layer: 0
   m_Name: R5_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -8324,6 +8536,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1047471854
 GameObject:
   m_ObjectHideFlags: 0
@@ -8607,8 +8820,8 @@ GameObject:
   - component: {fileID: 1081741676}
   - component: {fileID: 1081741675}
   m_Layer: 0
-  m_Name: Op_App_3 (1)
-  m_TagString: Untagged
+  m_Name: Op_App_8
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -8643,6 +8856,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1081741676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8755,8 +8969,8 @@ GameObject:
   - component: {fileID: 1094545948}
   - component: {fileID: 1094545947}
   m_Layer: 0
-  m_Name: R5_App_2
-  m_TagString: Untagged
+  m_Name: R11_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -8791,6 +9005,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1094545948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8944,8 +9159,8 @@ GameObject:
   - component: {fileID: 1111861541}
   - component: {fileID: 1111861540}
   m_Layer: 0
-  m_Name: R5_App_1
-  m_TagString: Untagged
+  m_Name: R15_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -8980,6 +9195,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1111861541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9057,8 +9273,8 @@ GameObject:
   - component: {fileID: 1127232255}
   - component: {fileID: 1127232254}
   m_Layer: 0
-  m_Name: R1_App_2
-  m_TagString: Untagged
+  m_Name: R7_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -9093,6 +9309,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1127232255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9171,7 +9388,7 @@ GameObject:
   - component: {fileID: 1133729756}
   m_Layer: 0
   m_Name: R6_App_3
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -9269,6 +9486,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1135848146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9478,7 +9696,7 @@ GameObject:
   - component: {fileID: 1158077130}
   m_Layer: 0
   m_Name: R6_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -9576,6 +9794,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1163303906
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,8 +10100,8 @@ GameObject:
   - component: {fileID: 1177368571}
   - component: {fileID: 1177368570}
   m_Layer: 0
-  m_Name: R5_App_2
-  m_TagString: Untagged
+  m_Name: R18_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -9917,6 +10136,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1177368571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9994,8 +10214,8 @@ GameObject:
   - component: {fileID: 1183290664}
   - component: {fileID: 1183290663}
   m_Layer: 0
-  m_Name: R2_App_2
-  m_TagString: Untagged
+  m_Name: R20_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -10030,6 +10250,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1183290664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10628,8 +10849,8 @@ GameObject:
   - component: {fileID: 1229219861}
   - component: {fileID: 1229219860}
   m_Layer: 0
-  m_Name: R3_App_1
-  m_TagString: Untagged
+  m_Name: R9_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -10664,6 +10885,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1229219861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10935,8 +11157,8 @@ GameObject:
   - component: {fileID: 1245104232}
   - component: {fileID: 1245104231}
   m_Layer: 0
-  m_Name: R4_App_2
-  m_TagString: Untagged
+  m_Name: R10_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -10971,6 +11193,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1245104232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11048,8 +11271,8 @@ GameObject:
   - component: {fileID: 1273849909}
   - component: {fileID: 1273849908}
   m_Layer: 0
-  m_Name: Op_App_3 (2)
-  m_TagString: Untagged
+  m_Name: Op_App_10
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -11084,6 +11307,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1273849909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11161,8 +11385,8 @@ GameObject:
   - component: {fileID: 1284628483}
   - component: {fileID: 1284628482}
   m_Layer: 0
-  m_Name: R6_App_3
-  m_TagString: Untagged
+  m_Name: R16_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -11197,6 +11421,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1284628483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11275,7 +11500,7 @@ GameObject:
   - component: {fileID: 1301065525}
   m_Layer: 0
   m_Name: R6_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -11373,6 +11598,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1317339484
 GameObject:
   m_ObjectHideFlags: 0
@@ -11618,8 +11844,8 @@ GameObject:
   - component: {fileID: 1361529739}
   - component: {fileID: 1361529738}
   m_Layer: 0
-  m_Name: R6_App_4
-  m_TagString: Untagged
+  m_Name: R16_App_4
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -11654,6 +11880,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1361529739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11962,8 +12189,8 @@ GameObject:
   - component: {fileID: 1393116498}
   - component: {fileID: 1393116497}
   m_Layer: 0
-  m_Name: R4_App_1
-  m_TagString: Untagged
+  m_Name: R17_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -11998,6 +12225,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1393116498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12464,7 +12692,7 @@ GameObject:
   - component: {fileID: 1520779875}
   m_Layer: 0
   m_Name: R2_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -12562,6 +12790,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1542617106
 GameObject:
   m_ObjectHideFlags: 0
@@ -12627,7 +12856,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585580600
 GameObject:
@@ -13491,8 +13720,8 @@ GameObject:
   - component: {fileID: 1682959603}
   - component: {fileID: 1682959602}
   m_Layer: 0
-  m_Name: R1_App_1
-  m_TagString: Untagged
+  m_Name: R19_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -13527,6 +13756,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1682959603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13798,8 +14028,8 @@ GameObject:
   - component: {fileID: 1699381231}
   - component: {fileID: 1699381230}
   m_Layer: 0
-  m_Name: R5_App_1
-  m_TagString: Untagged
+  m_Name: R11_App_1
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -13834,6 +14064,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1699381231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13911,8 +14142,8 @@ GameObject:
   - component: {fileID: 1700797379}
   - component: {fileID: 1700797378}
   m_Layer: 0
-  m_Name: Op_App_1 (2)
-  m_TagString: Untagged
+  m_Name: Op_App_9
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -13947,6 +14178,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1700797379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14062,8 +14294,8 @@ GameObject:
   - component: {fileID: 1709795673}
   - component: {fileID: 1709795672}
   m_Layer: 0
-  m_Name: Op_App_1 (4)
-  m_TagString: Untagged
+  m_Name: Op_App_13
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -14098,6 +14330,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1709795673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14211,104 +14444,6 @@ Transform:
   - {fileID: 1808979637}
   - {fileID: 19287432}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1743968716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1743968720}
-  - component: {fileID: 1743968719}
-  - component: {fileID: 1743968718}
-  - component: {fileID: 1743968717}
-  m_Layer: 0
-  m_Name: Ghost
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!136 &1743968717
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743968716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1743968718
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743968716}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1743968719
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743968716}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1743968720
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743968716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.6, y: 4.9, z: 22.3}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752038449
@@ -14401,8 +14536,8 @@ GameObject:
   - component: {fileID: 1767772691}
   - component: {fileID: 1767772690}
   m_Layer: 0
-  m_Name: R6_App_3
-  m_TagString: Untagged
+  m_Name: R12_App_3
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -14437,6 +14572,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1767772691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14514,8 +14650,8 @@ GameObject:
   - component: {fileID: 1780026256}
   - component: {fileID: 1780026255}
   m_Layer: 0
-  m_Name: Op_App_1
-  m_TagString: Untagged
+  m_Name: Op_App_4
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -14550,6 +14686,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1780026256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14666,7 +14803,7 @@ GameObject:
   - component: {fileID: 1784393315}
   m_Layer: 0
   m_Name: Op_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -14764,6 +14901,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1796847577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14860,7 +14998,7 @@ RectTransform:
   - {fileID: 1037779811}
   - {fileID: 212543760}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14882,7 +15020,7 @@ GameObject:
   - component: {fileID: 1801756410}
   m_Layer: 0
   m_Name: R1_App_2
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -14980,6 +15118,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &1808979636
 GameObject:
   m_ObjectHideFlags: 0
@@ -15128,8 +15267,8 @@ GameObject:
   - component: {fileID: 1880996133}
   - component: {fileID: 1880996132}
   m_Layer: 0
-  m_Name: R1_App_2
-  m_TagString: Untagged
+  m_Name: R19_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -15164,6 +15303,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1880996133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15241,8 +15381,8 @@ GameObject:
   - component: {fileID: 1888658370}
   - component: {fileID: 1888658369}
   m_Layer: 0
-  m_Name: R6_App_2
-  m_TagString: Untagged
+  m_Name: R12_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -15277,6 +15417,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1888658370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15354,8 +15495,8 @@ GameObject:
   - component: {fileID: 1916124745}
   - component: {fileID: 1916124744}
   m_Layer: 0
-  m_Name: R4_App_2
-  m_TagString: Untagged
+  m_Name: R17_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -15390,6 +15531,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1916124745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15467,8 +15609,8 @@ GameObject:
   - component: {fileID: 1919326126}
   - component: {fileID: 1919326125}
   m_Layer: 0
-  m_Name: Op_App_2
-  m_TagString: Untagged
+  m_Name: Op_App_5
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -15503,6 +15645,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1919326126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15774,8 +15917,8 @@ GameObject:
   - component: {fileID: 1953222487}
   - component: {fileID: 1953222486}
   m_Layer: 0
-  m_Name: Op_App_3
-  m_TagString: Untagged
+  m_Name: Op_App_6
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -15810,6 +15953,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &1953222487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16081,8 +16225,8 @@ GameObject:
   - component: {fileID: 2020326455}
   - component: {fileID: 2020326454}
   m_Layer: 0
-  m_Name: Op_App_1 (6)
-  m_TagString: Untagged
+  m_Name: Op_App_15
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -16117,6 +16261,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &2020326455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16291,8 +16436,8 @@ GameObject:
   - component: {fileID: 2044455870}
   - component: {fileID: 2044455869}
   m_Layer: 0
-  m_Name: R2_App_2
-  m_TagString: Untagged
+  m_Name: R8_App_2
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -16327,6 +16472,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!65 &2044455870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16634,7 +16780,7 @@ GameObject:
   - component: {fileID: 2109516347}
   m_Layer: 0
   m_Name: R1_App_1
-  m_TagString: Untagged
+  m_TagString: Appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -16732,6 +16878,7 @@ MonoBehaviour:
   loadContribution: 5
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
+  inGhostRange: 0
 --- !u!1 &2114855306
 GameObject:
   m_ObjectHideFlags: 0

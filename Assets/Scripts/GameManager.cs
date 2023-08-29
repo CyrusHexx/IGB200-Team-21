@@ -37,10 +37,33 @@ public class GameManager : MonoBehaviour
         loadSlider.value = currentLoad; // Set the initial value of the load slider
 
         // Start the random switching coroutine
-        StartCoroutine(RandomSwitch());
+        /// StartCoroutine(RandomSwitch());
     }
 
+    private void Update()
+    {
+        UpdateAppliance();
+    }
 
+    private void UpdateAppliance()
+    {
+        List<Appliance> offAppliances = new List<Appliance>();
+        foreach (var appliance in appliances)
+        {
+            bool inGhostRange = appliance.GetComponent<Appliance>().inGhostRange;
+            Debug.Log(inGhostRange + " for appliance " + appliance);
+            if (inGhostRange == true && !appliance.IsOn())
+            {
+                offAppliances.Add(appliance);
+            }
+        }
+        for(int i = 0; i < offAppliances.Count; i++)
+        {
+            Appliance turnedONAppliance = offAppliances[i];
+            turnedONAppliance.ToggleState();
+        }
+    }
+    
     public void UpdateLoadMeter(float loadChange)
     {
         currentLoad += loadChange;
