@@ -32,7 +32,7 @@ public class Ghost : MonoBehaviour
     private void moveToPosition()
     {
         transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
-
+        transform.LookAt(newPos);
     }
 
     
