@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
         foreach (var appliance in appliances)
         {
             bool inGhostRange = appliance.GetComponent<Appliance>().inGhostRange;
-            Debug.Log(inGhostRange + " for appliance " + appliance);
             if (inGhostRange == true && !appliance.IsOn())
             {
                 offAppliances.Add(appliance);
