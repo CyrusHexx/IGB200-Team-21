@@ -16,7 +16,7 @@ public class Appliance : MonoBehaviour
     {
         rend = GetComponent<Renderer>(); // Get the Renderer component
 
-        // Randomly set initial state
+        // set initial state
         isOn = false;
 
         // Update the load meter based on the initial state

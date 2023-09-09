@@ -29,13 +29,13 @@ public class Ghost : MonoBehaviour
         overloadCheck = GameManager.instance.overload;
         if (overloadCheck == false)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(168f, 0f, 255f, 100f);
+            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0.5f);
             newPosition();
             moveToPosition();
         }
         else if (overloadCheck == true)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(168f, 0f, 255f, 255f);
+            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 1f);
             ChasePlayer();
         }
     }
