@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                 if (appliance != null && appliance.IsOn())
                 {
                     // Toggle the state of the appliance if it's on
-                    appliance.ToggleState();
+                    appliance.ToggleState(false);
                 }
             }
         }

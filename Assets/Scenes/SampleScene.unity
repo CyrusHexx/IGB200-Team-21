@@ -2121,6 +2121,7 @@ MonoBehaviour:
   switchInterval: 3
   loadSlider: {fileID: 1544264922}
   maxLoad: 100
+  overload: 0
 --- !u!4 &257328851
 Transform:
   m_ObjectHideFlags: 0
@@ -11251,6 +11252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4405b4fa2ebb484582e0e78f9984a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghost: {fileID: 1232391798}
   speed: 7
 --- !u!136 &1232391804
 CapsuleCollider:
@@ -14094,6 +14096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4405b4fa2ebb484582e0e78f9984a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghost: {fileID: 1681984338}
   speed: 7
 --- !u!136 &1681984340
 CapsuleCollider:

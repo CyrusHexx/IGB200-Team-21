@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float switchInterval = 5f; // Time between random switches
     public Slider loadSlider; // Reference to the UI Slider
     public float maxLoad = 100f; // Maximum load before game over
+    public bool overload = false;
     private float currentLoad;
 
     private void Awake()
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
         foreach (var appliance in appliances)
         {
             bool inGhostRange = appliance.GetComponent<Appliance>().inGhostRange;
-            if (inGhostRange == true && !appliance.IsOn())
+            if (inGhostRange == true && overload == false && !appliance.IsOn())
             {
                 offAppliances.Add(appliance);
             }
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < offAppliances.Count; i++)
         {
             Appliance turnedONAppliance = offAppliances[i];
-            turnedONAppliance.ToggleState();
+            turnedONAppliance.ToggleState(false);
         }
     }
     
@@ -75,7 +76,21 @@ public class GameManager : MonoBehaviour
 
         if (currentLoad >= maxLoad)
         {
-            // Game over logic
+            overload = true;
+            List<Appliance> onAppliances = new List<Appliance>();
+            foreach (var appliance in appliances)
+            {
+                if (appliance.IsOn())
+                {
+                    onAppliances.Add(appliance);
+                }
+            }
+            for (int i = 0; i < onAppliances.Count; i++)
+            {
+                
+                Appliance turnedOFFAppliance = onAppliances[i];
+                turnedOFFAppliance.ToggleState(true);
+            }
         }
     }
 
@@ -102,7 +117,7 @@ public class GameManager : MonoBehaviour
                 Appliance randomAppliance = offAppliances[randomIndex];
 
                 // Turn on the selected appliance
-                randomAppliance.ToggleState();
+                randomAppliance.ToggleState(false);
             }
         }
     }

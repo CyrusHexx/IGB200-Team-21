@@ -29,13 +29,19 @@ public class Appliance : MonoBehaviour
     }
 
 
-    public void ToggleState()
+    public void ToggleState(bool overloaded)
     {
-        isOn = !isOn;
-        UpdateColor(); // Update the color based on the new state
-        GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
-
-        Debug.Log(gameObject.name + " toggled " + (isOn ? "on" : "off") + ", load contribution: " + (isOn ? loadContribution : -loadContribution));
+        if (overloaded == false)
+        {
+            isOn = !isOn;
+            UpdateColor(); // Update the color based on the new state
+            GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
+        }
+        else if (overloaded == true)
+        {
+            isOn = !isOn;
+            UpdateColor(); // Update the color based on the new state
+        } 
     }
 
     private void UpdateColor()
