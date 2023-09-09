@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Camera; // Reference to the Scene camera
     private float playerPosX;
     private float playerPosZ;
+    public bool playerCaught = false;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         // Check for the "K" key press
         if (Input.GetKeyDown(KeyCode.K))
         {
+            
             // Cast a ray to detect nearby appliances
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
             foreach (Collider hitCollider in hitColliders)
@@ -34,12 +36,28 @@ public class PlayerController : MonoBehaviour
                 if (appliance != null && appliance.IsOn())
                 {
                     // Toggle the state of the appliance if it's on
-                    appliance.ToggleState();
+                    appliance.ToggleState(false);
+                }
+
+                PowerFuseBox powerfusebox = hitCollider.GetComponent<PowerFuseBox>();
+                if (powerfusebox != null && powerfusebox.IsOn())
+                {
+                    powerfusebox.powerRestart();
+                    GameManager.instance.resetLoad();
                 }
             }
         }
+        checkCaught();
     }
 
+    private void checkCaught()
+    {
+        if (playerCaught == true)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    
     private void MovePlayer()
     {
         // Get the horizontal and vertical input (WASD keys)
@@ -69,5 +87,14 @@ public class PlayerController : MonoBehaviour
 
         // Update the camera to be at the same positon as the player
         Camera.transform.position = new Vector3(playerPosX, 60, playerPosZ - 3);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool overloadCheck = GameManager.instance.overload;
+        if (other.transform.tag == "Ghost" && overloadCheck == true)
+        {
+            playerCaught = true;
+        }
     }
 }

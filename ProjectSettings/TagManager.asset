@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Appliance
   - Ghost
+  - Power
   layers:
   - Default
   - TransparentFX
