@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
                 PowerFuseBox powerfusebox = hitCollider.GetComponent<PowerFuseBox>();
                 if (powerfusebox != null && powerfusebox.IsOn())
                 {
-                    powerfusebox.powerRestart(true);
+                    powerfusebox.powerRestart();
+                    GameManager.instance.resetLoad();
                 }
             }
         }

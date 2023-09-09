@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public Slider loadSlider; // Reference to the UI Slider
     public float maxLoad = 100f; // Maximum load before game over
     public bool overload = false;
-    private float currentLoad;
+    public bool poweredDown = false;
+    public float currentLoad;
 
     private void Awake()
     {
@@ -45,7 +46,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         UpdateAppliance();
-        Debug.Log(overload);
     }
 
     private void UpdateAppliance()
@@ -66,6 +66,13 @@ public class GameManager : MonoBehaviour
         }
     }
     
+   public void resetLoad()
+    {
+        overload = false;
+        currentLoad = 0;
+        loadSlider.value = currentLoad;
+    }
+    
     public void UpdateLoadMeter(float loadChange)
     {
         currentLoad += loadChange;
@@ -73,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         loadSlider.value = currentLoad; // Update the slider's value
 
-        Debug.Log("Current Load: " + currentLoad);
+        ///Debug.Log("Current Load: " + currentLoad);
 
 
         if (currentLoad >= maxLoad)
@@ -92,8 +99,8 @@ public class GameManager : MonoBehaviour
             {
 
                 PowerFuseBox turnedOFFPowerBox = onPowerBox[i];
-                turnedOFFPowerBox.powerRestart(true);
-                overload = false;
+                turnedOFFPowerBox.powerRestart();
+                
             }
   
             List<Appliance> onAppliances = new List<Appliance>();

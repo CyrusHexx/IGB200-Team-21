@@ -2158,6 +2158,8 @@ MonoBehaviour:
   loadSlider: {fileID: 1544264922}
   maxLoad: 100
   overload: 0
+  poweredDown: 0
+  currentLoad: 0
 --- !u!4 &257328851
 Transform:
   m_ObjectHideFlags: 0

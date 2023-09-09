@@ -23,29 +23,13 @@ public class PowerFuseBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        powerRestart(false);
+        
     }
 
-    public void powerRestart(bool state)
+    public void powerRestart()
     {
-        if (state == false)
-        {
-            bool overload = GameManager.instance.overload;
-
-            if (overload == true)
-            {
-                isOn = !isOn;
-                UpdateColor(); // Update the color based on the new state
-            }
-        }
-        else if(state == true)
-        {
-            isOn = !isOn;
-            UpdateColor(); // Update the color based on the new state
-
-            ///powerRestarted = true;
-        }
-           
+        isOn = !isOn;
+        UpdateColor(); // Update the color based on the new state      
     }
 
     private void UpdateColor()
