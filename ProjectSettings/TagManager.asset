@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Appliance
   - Ghost
+  - Light_Bulb
   layers:
   - Default
   - TransparentFX

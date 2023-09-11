@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     public string[] secTimer = { "00", "10", "20", "30", "40", "50" };
     public string[] hourTimer = { "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06" };
 
-    public Text timerText;
+    private TextMeshProUGUI timerText; //Whoever use Text instead of TMPro your an fools. @Nathan3197, jk. TMPRO has more cools functions that you can do with text
     private float timer = 0.0f;
     private float waitTime = 5.0f;
     private int secCounter = 0;
@@ -18,7 +19,8 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
+        timerText = gameObject.GetComponent<TextMeshProUGUI>(); // this script already has the text, may aswell grab it in code instead of the editor
+        timerText.text = $"{hourTimer[hourCounter]}:{secTimer[secCounter]}";//hourTimer[hourCounter] + ":" + secTimer[secCounter]; //Better way to handle data and text. GGEZ
     }
 
     // Update is called once per frame
@@ -32,13 +34,13 @@ public class Timer : MonoBehaviour
             {
                 hourCounter = hourCounter + 1;
                 secCounter = 0;
-                timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
+                timerText.text = $"{hourTimer[hourCounter]}:{secTimer[secCounter]}";
                 timer = timer - waitTime;
             }
             else
             {
                 secCounter = secCounter + 1;
-                timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
+                timerText.text = $"{hourTimer[hourCounter]}:{secTimer[secCounter]}";
                 timer = timer - waitTime;
             }
         }
