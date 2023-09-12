@@ -2156,6 +2156,7 @@ MonoBehaviour:
   - {fileID: 1767621734}
   switchInterval: 3
   loadSlider: {fileID: 1544264922}
+  mainLight: {fileID: 705507994}
   maxLoad: 100
   overload: 0
   poweredDown: 0
