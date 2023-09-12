@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public PowerFuseBox[] fuseBoxes; // reference to all power fuse boxes
     public float switchInterval = 5f; // Time between random switches
     public Slider loadSlider; // Reference to the UI Slider
+    public Light mainLight;
     public float maxLoad = 100f; // Maximum load before game over
     public bool overload = false;
     public bool poweredDown = false;
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
         if (currentLoad >= maxLoad)
         {
             overload = true;
+            mainLight.intensity = 0.1f;
 
             List<PowerFuseBox> onPowerBox = new List<PowerFuseBox>();
             foreach (var fuses in fuseBoxes)
@@ -102,6 +104,7 @@ public class GameManager : MonoBehaviour
                 turnedOFFPowerBox.powerRestart();
                 
             }
+
   
             List<Appliance> onAppliances = new List<Appliance>();
             foreach (var appliance in appliances)
@@ -117,6 +120,11 @@ public class GameManager : MonoBehaviour
                 Appliance turnedOFFAppliance = onAppliances[i];
                 turnedOFFAppliance.ToggleState(true);
             }
+        }
+
+        else
+        {
+            mainLight.intensity = 1f;
         }
     }
 
