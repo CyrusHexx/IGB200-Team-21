@@ -6461,9 +6461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26eb83054892354789057b18cb425ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 5
-  moveSpeed: 20
-  rotationSpeed: 700
+  interactionRange: 2.5
+  moveSpeed: 25
+  rotationSpeed: 600
   Camera: {fileID: 963194225}
   playerCaught: 0
 --- !u!136 &809553936
