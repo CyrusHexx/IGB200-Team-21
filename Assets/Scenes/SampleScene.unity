@@ -11236,7 +11236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghost: {fileID: 1052382905}
-  speed: 7
+  speed: 9
 --- !u!136 &1232391804
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14194,7 +14194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghost: {fileID: 557924750}
-  speed: 7
+  speed: 9
 --- !u!136 &1681984340
 CapsuleCollider:
   m_ObjectHideFlags: 0
