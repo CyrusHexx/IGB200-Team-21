@@ -20,10 +20,17 @@ public class PlayerController : MonoBehaviour
     public GameObject secondFloor;
     public GameObject basement;
 
+    public GameObject firstFloorApps;
+    public GameObject secondFloorApps;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         secondFloor.SetActive(false);
+        foreach (Renderer renderer in secondFloorApps.GetComponentsInChildren(typeof(Renderer)))
+        {
+            renderer.enabled = false;
+        }
 
     }
 
@@ -66,15 +73,33 @@ public class PlayerController : MonoBehaviour
         if (playerHeight < 2.5f)
         {
             firstFloor.SetActive(false);
+
+            foreach (Renderer renderer in firstFloorApps.GetComponentsInChildren(typeof(Renderer)))
+            {
+                renderer.enabled = false;
+            }
         }
         if (playerHeight > 2.5f && playerHeight < 9)
         {
             secondFloor.SetActive(false);
+            foreach (Renderer renderer in secondFloorApps.GetComponentsInChildren(typeof(Renderer)))
+            {
+                renderer.enabled = false;
+            }
+
             firstFloor.SetActive(true);
+            foreach (Renderer renderer in firstFloorApps.GetComponentsInChildren(typeof(Renderer)))
+            {
+                renderer.enabled = true;
+            }
         }
         if (playerHeight > 9)
         {
             secondFloor.SetActive(true);
+            foreach (Renderer renderer in secondFloorApps.GetComponentsInChildren(typeof(Renderer)))
+            {
+                renderer.enabled = true;
+            }
         }
     }
     
