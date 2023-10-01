@@ -12,12 +12,19 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller; // Reference to the Character Controller component
     public GameObject Camera; // Reference to the Scene camera
     private float playerPosX;
+    private float playerPosY;
     private float playerPosZ;
     public bool playerCaught = false;
+
+    public GameObject firstFloor;
+    public GameObject secondFloor;
+    public GameObject basement;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        secondFloor.SetActive(false);
+
     }
 
     private void Update()
@@ -48,9 +55,30 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        checkFloor();
         checkCaught();
     }
 
+    private void checkFloor()
+    {
+        float playerHeight = this.gameObject.transform.position.y;
+
+        if (playerHeight < 2.5f)
+        {
+            firstFloor.SetActive(false);
+        }
+        if (playerHeight > 2.5f && playerHeight < 9)
+        {
+            secondFloor.SetActive(false);
+            firstFloor.SetActive(true);
+        }
+        if (playerHeight > 9)
+        {
+            secondFloor.SetActive(true);
+        }
+    }
+    
+    
     private void checkCaught()
     {
         if (playerCaught == true)
@@ -85,9 +113,10 @@ public class PlayerController : MonoBehaviour
         // Get player's current position in the game world
         playerPosX = GameObject.Find("Player").transform.position.x;
         playerPosZ = GameObject.Find("Player").transform.position.z;
+        playerPosY = GameObject.Find("Player").transform.position.y;
 
         // Update the camera to be at the same positon as the player
-        Camera.transform.position = new Vector3(playerPosX, 60, playerPosZ - 3);
+        Camera.transform.position = new Vector3(playerPosX, playerPosY + 60, playerPosZ - 3);
     }
 
     private void OnTriggerEnter(Collider other)
