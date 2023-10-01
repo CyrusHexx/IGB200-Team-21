@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCaught == true)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Loss");
         }
     }
     
