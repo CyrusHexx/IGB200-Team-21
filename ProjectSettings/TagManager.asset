@@ -7,6 +7,9 @@ TagManager:
   - Appliance
   - Ghost
   - Power
+  - 2nd Floor
+  - 1st Floor
+  - Basement
   layers:
   - Default
   - TransparentFX

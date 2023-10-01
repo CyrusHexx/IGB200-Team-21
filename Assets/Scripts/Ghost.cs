@@ -15,7 +15,7 @@ public class Ghost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        newPos = new Vector3(Random.Range(-67,66), 4, Random.Range(-51, 83));
+        newPos = new Vector3(Random.Range(-55,135), 4, Random.Range(3, 195));
     }
 
     // Update is called once per frame
