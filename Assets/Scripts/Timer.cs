@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public string[] secTimer = { "00", "10", "20", "30", "40", "50" };
@@ -14,33 +14,42 @@ public class Timer : MonoBehaviour
     private int secCounter = 0;
     private int hourCounter = 0;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
+        UpdateTimeText();
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
         if (timer > waitTime)
         {
-            if (secCounter == 5)
+            timer -= waitTime;
+
+            secCounter++;
+            if (secCounter >= secTimer.Length)
             {
-                hourCounter = hourCounter + 1;
                 secCounter = 0;
-                timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
-                timer = timer - waitTime;
+                hourCounter++;
             }
-            else
+
+            if (hourCounter >= hourTimer.Length)
             {
-                secCounter = secCounter + 1;
-                timerText.text = hourTimer[hourCounter] + ":" + secTimer[secCounter];
-                timer = timer - waitTime;
+                hourCounter = 0;
+            }
+
+            UpdateTimeText();
+
+            if (hourTimer[hourCounter] == "06" && secTimer[secCounter] == "00")
+            {
+                SceneManager.LoadScene("Win");
             }
         }
+    }
+
+    void UpdateTimeText()
+    {
+        timerText.text = $"{hourTimer[hourCounter]}:{secTimer[secCounter]}";
     }
 }

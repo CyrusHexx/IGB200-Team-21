@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCaught == true)
         {
-            Destroy(this.gameObject);
+            SceneManager.LoadScene("Loss");
         }
     }
     
