@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Ghost : MonoBehaviour
 {
     private Vector3 newPos;
     public GameObject ghost;
+    public GameObject player;
     public float speed = 100.0f;
     private bool overloadCheck;
     private float playerX;
     private float playerZ;
-    
-    
+    NavMeshAgent ghostNavMesh;
+
+    public Appliance[] appliance = new Appliance[38]; 
     // Start is called before the first frame update
     void Start()
     {
-        newPos = new Vector3(Random.Range(-55,135), 4, Random.Range(3, 195));
+        appliance = GameManager.instance.appliances;
+        ghostNavMesh = GetComponent<NavMeshAgent>();
+
+        newPos = appliance[Random.Range(0, 39)].transform.position;
     }
 
     // Update is called once per frame
@@ -46,22 +52,22 @@ public class Ghost : MonoBehaviour
         playerZ = GameObject.Find("Player").transform.position.z;
         newPos = new Vector3(playerX, 4, playerZ);
 
-        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
+        ghostNavMesh.SetDestination(player.transform.position);
         transform.LookAt(newPos);
     }
     
     private void newPosition()
     {
-        if (gameObject.transform.position == newPos)
+        if (Vector3.Distance(ghost.transform.position, newPos) <= 3)
         {
-            newPos = new Vector3(Random.Range(-67, 66), 4, Random.Range(-51, 83));
+            newPos = appliance[Random.Range(0, 39)].transform.position;
         }
     }
 
     private void moveToPosition()
     {
-        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
-        transform.LookAt(newPos);
+        ghostNavMesh.SetDestination(newPos);
+        //transform.LookAt(newPos);
     }
 
     
