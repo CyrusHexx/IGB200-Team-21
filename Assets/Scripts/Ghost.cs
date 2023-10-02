@@ -12,7 +12,12 @@ public class Ghost : MonoBehaviour
     private bool overloadCheck;
     private float playerX;
     private float playerZ;
-    NavMeshAgent ghostNavMesh;
+    public NavMeshAgent ghostNavMesh;
+
+    private float speedTime;
+    private float speedTimer = 15f;
+    private float speedRate = 2f;
+
 
     public Appliance[] appliance = new Appliance[38]; 
     // Start is called before the first frame update
@@ -38,22 +43,30 @@ public class Ghost : MonoBehaviour
             ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0.5f);
             newPosition();
             moveToPosition();
+            updateSpeed();
         }
         else if (overloadCheck == true)
         {
             ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 1f);
             ChasePlayer();
+            ghostNavMesh.speed = 20f;
+        }
+    }
+    
+    private void updateSpeed()
+    {
+        speedTime = speedTime + Time.deltaTime;
+        if (speedTime > speedTimer)
+        {
+            ghostNavMesh.speed = ghostNavMesh.speed + speedRate;
+            speedTime = 0;
         }
     }
     
     private void ChasePlayer()
     {
-        playerX = GameObject.Find("Player").transform.position.x;
-        playerZ = GameObject.Find("Player").transform.position.z;
-        newPos = new Vector3(playerX, 4, playerZ);
-
         ghostNavMesh.SetDestination(player.transform.position);
-        transform.LookAt(newPos);
+        transform.LookAt(player.transform.position);
     }
     
     private void newPosition()
