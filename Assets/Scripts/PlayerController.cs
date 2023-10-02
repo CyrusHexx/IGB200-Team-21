@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public GameObject firstFloorApps;
     public GameObject secondFloorApps;
 
+    public GameObject GhostOne;
+    public GameObject GhostTwo;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -59,6 +62,8 @@ public class PlayerController : MonoBehaviour
                 {
                     powerfusebox.powerRestart();
                     GameManager.instance.resetLoad();
+                    GhostOne.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
+                    GhostTwo.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
                 }
             }
         }

@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Ghost : MonoBehaviour
 {
     private Vector3 newPos;
     public GameObject ghost;
+    public GameObject player;
     public float speed = 100.0f;
     private bool overloadCheck;
     private float playerX;
     private float playerZ;
-    
-    
+    public NavMeshAgent ghostNavMesh;
+
+    private float speedTime;
+    private float speedTimer = 15f;
+    private float speedRate = 2f;
+
+
+    public Appliance[] appliance = new Appliance[38]; 
     // Start is called before the first frame update
     void Start()
     {
-        newPos = new Vector3(Random.Range(-55,135), 4, Random.Range(3, 195));
+        appliance = GameManager.instance.appliances;
+        ghostNavMesh = GetComponent<NavMeshAgent>();
+
+        newPos = appliance[Random.Range(0, 39)].transform.position;
     }
 
     // Update is called once per frame
@@ -32,36 +43,44 @@ public class Ghost : MonoBehaviour
             ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0.5f);
             newPosition();
             moveToPosition();
+            updateSpeed();
         }
         else if (overloadCheck == true)
         {
             ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 1f);
             ChasePlayer();
+            ghostNavMesh.speed = 20f;
+        }
+    }
+    
+    private void updateSpeed()
+    {
+        speedTime = speedTime + Time.deltaTime;
+        if (speedTime > speedTimer)
+        {
+            ghostNavMesh.speed = ghostNavMesh.speed + speedRate;
+            speedTime = 0;
         }
     }
     
     private void ChasePlayer()
     {
-        playerX = GameObject.Find("Player").transform.position.x;
-        playerZ = GameObject.Find("Player").transform.position.z;
-        newPos = new Vector3(playerX, 4, playerZ);
-
-        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
-        transform.LookAt(newPos);
+        ghostNavMesh.SetDestination(player.transform.position);
+        transform.LookAt(player.transform.position);
     }
     
     private void newPosition()
     {
-        if (gameObject.transform.position == newPos)
+        if (Vector3.Distance(ghost.transform.position, newPos) <= 3)
         {
-            newPos = new Vector3(Random.Range(-67, 66), 4, Random.Range(-51, 83));
+            newPos = appliance[Random.Range(0, 39)].transform.position;
         }
     }
 
     private void moveToPosition()
     {
-        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
-        transform.LookAt(newPos);
+        ghostNavMesh.SetDestination(newPos);
+        //transform.LookAt(newPos);
     }
 
     

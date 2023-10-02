@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
@@ -8,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; // Singleton reference
     public Appliance[] appliances; // Reference to all appliances
     public PowerFuseBox[] fuseBoxes; // reference to all power fuse boxes
-    public float switchInterval = 5f; // Time between random switches
     public Slider loadSlider; // Reference to the UI Slider
     public Light mainLight;
     public float maxLoad = 100f; // Maximum load before game over
@@ -121,38 +121,9 @@ public class GameManager : MonoBehaviour
                 turnedOFFAppliance.ToggleState(true);
             }
         }
-
         else
         {
             mainLight.intensity = 1f;
-        }
-    }
-
-    private IEnumerator RandomSwitch()
-    {
-        while (true) // Infinite loop to keep switching appliances
-        {
-            yield return new WaitForSeconds(switchInterval); // Wait for the specified interval
-
-            // Get all appliances that are currently off
-            List<Appliance> offAppliances = new List<Appliance>();
-            foreach (var appliance in appliances)
-            {
-                if (!appliance.IsOn())
-                {
-                    offAppliances.Add(appliance);
-                }
-            }
-
-            // If there are any off appliances, select a random one to turn on
-            if (offAppliances.Count > 0)
-            {
-                int randomIndex = Random.Range(0, offAppliances.Count);
-                Appliance randomAppliance = offAppliances[randomIndex];
-
-                // Turn on the selected appliance
-                randomAppliance.ToggleState(false);
-            }
         }
     }
 }

@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd40c262151be6c4abf8d5607ced11d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadContribution: 5
+  loadContribution: 8
   onColor: {r: 1, g: 0, b: 0, a: 1}
   offColor: {r: 0, g: 1, b: 0, a: 1}
   inGhostRange: 0
