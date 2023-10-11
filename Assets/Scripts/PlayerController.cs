@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         UpdateCamera(); // Updates Camera movement to follow player
 
         // Check for the "K" key press
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             
             // Cast a ray to detect nearby appliances

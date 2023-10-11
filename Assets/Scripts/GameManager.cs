@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour
         }
 
         loadSlider.value = currentLoad; // Set the initial value of the load slider
-
-        // Start the random switching coroutine
-        /// StartCoroutine(RandomSwitch());
     }
 
     private void Update()

@@ -19,14 +19,14 @@ public class Ghost : MonoBehaviour
     private float speedRate = 2f;
 
 
-    public Appliance[] appliance = new Appliance[38]; 
+    public Appliance[] appliance = new Appliance[45]; 
     // Start is called before the first frame update
     void Start()
     {
         appliance = GameManager.instance.appliances;
         ghostNavMesh = GetComponent<NavMeshAgent>();
 
-        newPos = appliance[Random.Range(0, 39)].transform.position;
+        newPos = appliance[Random.Range(0, 46)].transform.position;
     }
 
     // Update is called once per frame
@@ -73,7 +73,7 @@ public class Ghost : MonoBehaviour
     {
         if (Vector3.Distance(ghost.transform.position, newPos) <= 3)
         {
-            newPos = appliance[Random.Range(0, 39)].transform.position;
+            newPos = appliance[Random.Range(0, 45)].transform.position;
         }
     }
 
