@@ -125,7 +125,6 @@ public class PlayerController : MonoBehaviour
     
     private void MovePlayer()
     {
-        Debug.Log(gravity);
         //Gravity System
         if (controller.isGrounded == true)
         {
@@ -138,12 +137,12 @@ public class PlayerController : MonoBehaviour
 
         // Create a movement direction based on the input
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), gravity, Input.GetAxis("Vertical")).normalized;
-
+        Debug.Log(moveDirection);
         // Move the player using the Character Controller component
         controller.Move(moveDirection * Time.deltaTime * moveSpeed);
 
         // Rotate the player to face the movement direction
-        if (moveDirection != Vector3.zero)
+        if (moveDirection.x > 0 || moveDirection.z > 0)
         {
             var rotateDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
             
