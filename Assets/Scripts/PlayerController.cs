@@ -11,10 +11,15 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 700.0f; // Speed at which the player rotates
     private CharacterController controller; // Reference to the Character Controller component
     public GameObject Camera; // Reference to the Scene camera
+
     private float playerPosX;
     private float playerPosY;
     private float playerPosZ;
+
     public bool playerCaught = false;
+
+    public float gravityStr = 9.8f;
+    private float gravity = 0;
 
     public GameObject firstFloor;
     public GameObject secondFloor;
@@ -41,11 +46,12 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer(); // Handles player movement
         UpdateCamera(); // Updates Camera movement to follow player
+        
 
         // Check for the "K" key press
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
+
             // Cast a ray to detect nearby appliances
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
             foreach (Collider hitCollider in hitColliders)
@@ -119,21 +125,29 @@ public class PlayerController : MonoBehaviour
     
     private void MovePlayer()
     {
-        // Get the horizontal and vertical input (WASD keys)
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        Debug.Log(gravity);
+        //Gravity System
+        if (controller.isGrounded == true)
+        {
+            gravity = 0;
+        }
+        if (controller.isGrounded == false)
+        {
+            gravity -= gravityStr * Time.deltaTime;
+        }
 
         // Create a movement direction based on the input
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-        moveDirection.Normalize();
+        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), gravity, Input.GetAxis("Vertical")).normalized;
 
         // Move the player using the Character Controller component
-        controller.SimpleMove(moveDirection * moveSpeed);
+        controller.Move(moveDirection * Time.deltaTime * moveSpeed);
 
         // Rotate the player to face the movement direction
         if (moveDirection != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            var rotateDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
+            
+            Quaternion toRotation = Quaternion.LookRotation(rotateDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }

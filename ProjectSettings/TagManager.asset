@@ -10,6 +10,7 @@ TagManager:
   - 2nd Floor
   - 1st Floor
   - Basement
+  - Ground
   layers:
   - Default
   - TransparentFX

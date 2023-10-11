@@ -996,7 +996,7 @@ GameObject:
   - component: {fileID: 100444026}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 574659941}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -10353,9 +10353,9 @@ GameObject:
   - component: {fileID: 809553939}
   - component: {fileID: 809553938}
   - component: {fileID: 809553937}
-  - component: {fileID: 809553936}
   - component: {fileID: 809553934}
   - component: {fileID: 809553940}
+  - component: {fileID: 809553941}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10380,6 +10380,7 @@ MonoBehaviour:
   rotationSpeed: 600
   Camera: {fileID: 963194225}
   playerCaught: 0
+  gravityStr: 9.8
   firstFloor: {fileID: 146568976}
   secondFloor: {fileID: 774952703}
   basement: {fileID: 686948569}
@@ -10387,20 +10388,6 @@ MonoBehaviour:
   secondFloorApps: {fileID: 2051762164}
   GhostOne: {fileID: 1232391798}
   GhostTwo: {fileID: 1681984338}
---- !u!136 &809553936
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809553933}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &809553937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10458,8 +10445,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809553933}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41, y: 4.7, z: 18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41, y: 4, z: 18}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10481,8 +10468,22 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_SkinWidth: 0.1
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &809553941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809553933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &812059255
 Mesh:
@@ -28059,7 +28060,7 @@ GameObject:
   - component: {fileID: 1356197508}
   m_Layer: 0
   m_Name: Stairs (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -32818,7 +32819,7 @@ GameObject:
   - component: {fileID: 1462518452}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -45151,7 +45152,7 @@ GameObject:
   - component: {fileID: 1952063212}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -45785,7 +45786,7 @@ GameObject:
   - component: {fileID: 2010855148}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -46688,7 +46689,7 @@ GameObject:
   - component: {fileID: 2022767472}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
