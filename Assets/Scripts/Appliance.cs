@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Appliance : MonoBehaviour
 {
@@ -10,10 +11,19 @@ public class Appliance : MonoBehaviour
     private bool isOn;
     public bool inGhostRange;
 
+    private GameObject player;
+    public GameObject infoText;
+    private bool infoShown = false;
+    private GameObject appName;
+    private GameObject appInfo;
+    private GameObject appStatus;
+
     private Renderer rend; // Reference to the Renderer component
 
     private void Start()
     {
+        player = GameObject.Find("Player");
+        infoText = GameObject.Find("Appliance Info");
         rend = GetComponent<Renderer>(); // Get the Renderer component
 
         // set initial state
@@ -26,6 +36,65 @@ public class Appliance : MonoBehaviour
         }
 
         UpdateColor(); // Set the initial color
+    }
+
+    private void Update()
+    {
+        CheckPlayerDistance();
+    }
+
+    
+    private void CheckPlayerDistance()
+    {
+        if (infoShown == false)
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 15)
+            {
+                appName = Instantiate(infoText, this.gameObject.transform);
+                appInfo = Instantiate(infoText, this.gameObject.transform);
+                appStatus = Instantiate(infoText, this.gameObject.transform);
+
+                appName.transform.position += new Vector3(-5, 0, 10);
+                appInfo.transform.position += new Vector3(-5, 0, 8);
+                appStatus.transform.position += new Vector3(-5, 0, 6);
+
+                TextMesh nameInfo = appName.GetComponent<TextMesh>();
+                TextMesh costInfo = appInfo.GetComponent<TextMesh>();
+                TextMesh statusInfo = appStatus.GetComponent<TextMesh>();
+
+
+                nameInfo.text = this.gameObject.name;
+                costInfo.text = "Energy Cost: " + loadContribution;
+                if (isOn == false)
+                {
+                    statusInfo.text = "Status: OFF";
+                }
+                else if (isOn == true)
+                {
+                   if(loadContribution >= 10f)
+                    {
+                        statusInfo.text = "Status: DEFECTIVE";
+                    }
+                    else
+                    {
+                        statusInfo.text = "Status: ON";
+                    }
+                }
+                
+                infoShown = true;
+            }
+        }
+        else
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) > 15)
+            {
+                Destroy(appName);
+                Destroy(appInfo);
+                Destroy(appStatus);
+                infoShown = false;
+            }
+        }
+        
     }
 
 

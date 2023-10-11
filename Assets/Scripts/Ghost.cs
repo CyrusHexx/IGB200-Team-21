@@ -26,7 +26,7 @@ public class Ghost : MonoBehaviour
         appliance = GameManager.instance.appliances;
         ghostNavMesh = GetComponent<NavMeshAgent>();
 
-        newPos = appliance[Random.Range(0, 46)].transform.position;
+        newPos = appliance[Random.Range(0, 45)].transform.position;
     }
 
     // Update is called once per frame
