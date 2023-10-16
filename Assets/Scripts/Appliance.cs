@@ -124,8 +124,12 @@ public class Appliance : MonoBehaviour
 
     void TryTriggerWireGame()
     {
-        wireConnectGame.ShowGame();
+        if (UnityEngine.Random.value <= 0.20f)
+        {
+            wireConnectGame.ShowGame();
+        }
     }
+
 
     private void HandleGameCompleted()
     {
