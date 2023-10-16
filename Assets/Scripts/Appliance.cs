@@ -18,6 +18,8 @@ public class Appliance : MonoBehaviour
     private GameObject appInfo;
     private GameObject appStatus;
 
+    public WireConnect wireConnectGame;
+
     private Renderer rend; // Reference to the Renderer component
 
     private void Start()
@@ -36,6 +38,10 @@ public class Appliance : MonoBehaviour
         }
 
         UpdateColor(); // Set the initial color
+
+        wireConnectGame.OnGameCompleted += HandleGameCompleted;
+        Debug.Log("Subscribed to OnGameCompleted event!");
+
     }
 
     private void Update()
@@ -97,21 +103,36 @@ public class Appliance : MonoBehaviour
         
     }
 
-
     public void ToggleState(bool overloaded)
     {
         if (overloaded == false)
         {
             isOn = !isOn;
-            UpdateColor(); // Update the color based on the new state
+            UpdateColor();
             GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
+            if (!isOn) // If the appliance is switched off
+            {
+                TryTriggerWireGame(); // Try to trigger the wire mini-game
+            }
         }
         else if (overloaded == true)
         {
             isOn = !isOn;
-            UpdateColor(); // Update the color based on the new state
-        } 
+            UpdateColor();
+        }
     }
+
+    void TryTriggerWireGame()
+    {
+        wireConnectGame.ShowGame();
+    }
+
+    private void HandleGameCompleted()
+    {
+        Debug.Log("HandleGameCompleted called!");
+        wireConnectGame.HideGame();
+    }
+
 
     private void UpdateColor()
     {
