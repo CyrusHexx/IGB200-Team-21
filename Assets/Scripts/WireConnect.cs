@@ -31,15 +31,19 @@ public class WireConnect : MonoBehaviour
         initialPositionsLeft = wiresLeft.Select(wire => wire.transform.position).ToArray();
         initialPositionsRight = wiresRight.Select(wire => wire.transform.position).ToArray();
 
+        ShuffleAndResetPositions(); // Shuffle and reset positions when the game starts.
+    }
+
+    private void ShuffleAndResetPositions()
+    {
         Shuffle(wiresLeft);
         Shuffle(wiresRight);
+
         for (int i = 0; i < wiresLeft.Length; i++)
         {
             wiresLeft[i].transform.position = initialPositionsLeft[i];
             wiresRight[i].transform.position = initialPositionsRight[i];
         }
-
-
     }
 
     private void Shuffle<T>(T[] array)
@@ -110,7 +114,7 @@ public class WireConnect : MonoBehaviour
 
     private void CheckWinCondition()
     {
-        if (correctlyConnectedCount == wiresLeft.Length) // Check against total wires
+        if (correctlyConnectedCount == wiresLeft.Length)
         {
             Debug.Log("Game completed event being invoked!");
             OnGameCompleted?.Invoke();
@@ -122,11 +126,14 @@ public class WireConnect : MonoBehaviour
     public void HideGame()
     {
         this.gameObject.SetActive(false);
+        ShuffleAndResetPositions(); // Shuffle and reset positions when the game ends.
     }
 
     public void ShowGame()
     {
         this.gameObject.SetActive(true);
         correctlyConnectedCount = 0; // Reset the counter when the game starts or restarts
+
+        ShuffleAndResetPositions(); // Shuffle and reset positions when the game starts.
     }
 }
