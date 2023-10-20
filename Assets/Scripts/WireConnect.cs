@@ -31,21 +31,23 @@ public class WireConnect : MonoBehaviour
         initialPositionsLeft = wiresLeft.Select(wire => wire.transform.position).ToArray();
         initialPositionsRight = wiresRight.Select(wire => wire.transform.position).ToArray();
 
-        ShuffleAndResetPositions(); // Shuffle and reset positions when the game starts.
-    }
-
-    private void ShuffleAndResetPositions()
-    {
+        /*
         Shuffle(wiresLeft);
-        Shuffle(wiresRight);
+        Shuffle(wiresRight);*/
 
+        Shuffle(wiresLeft, wiresRight);
+
+        /*
         for (int i = 0; i < wiresLeft.Length; i++)
         {
             wiresLeft[i].transform.position = initialPositionsLeft[i];
             wiresRight[i].transform.position = initialPositionsRight[i];
         }
+        */
+
     }
 
+    /*
     private void Shuffle<T>(T[] array)
     {
         int n = array.Length;
@@ -55,6 +57,18 @@ public class WireConnect : MonoBehaviour
             T tmp = array[i];
             array[i] = array[r];
             array[r] = tmp;
+        }
+    }
+    */
+    private void Shuffle(Button[] wireButtons, Image[] wireImages)
+    {
+        wireButtons = wireButtons.OrderBy(x => UnityEngine.Random.value).ToArray();
+        wireImages = wireImages.OrderBy(x => UnityEngine.Random.value).ToArray();
+
+        for (int i = 0; i < wireButtons.Length; i++)
+        {
+            wireButtons[i].transform.position = initialPositionsLeft[i];
+            wireImages[i].transform.position = initialPositionsRight[i];
         }
     }
 
@@ -114,7 +128,7 @@ public class WireConnect : MonoBehaviour
 
     private void CheckWinCondition()
     {
-        if (correctlyConnectedCount == wiresLeft.Length)
+        if (correctlyConnectedCount == wiresLeft.Length) // Check against total wires
         {
             Debug.Log("Game completed event being invoked!");
             OnGameCompleted?.Invoke();
@@ -126,14 +140,25 @@ public class WireConnect : MonoBehaviour
     public void HideGame()
     {
         this.gameObject.SetActive(false);
-        ShuffleAndResetPositions(); // Shuffle and reset positions when the game ends.
     }
 
     public void ShowGame()
     {
+        Shuffle(wiresLeft, wiresRight);
+        ResetWireRaycasts();
         this.gameObject.SetActive(true);
-        correctlyConnectedCount = 0; // Reset the counter when the game starts or restarts
+        correctlyConnectedCount = 0;
 
-        ShuffleAndResetPositions(); // Shuffle and reset positions when the game starts.
+        // Reset the event system's selected game object
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+
+    private void ResetWireRaycasts()
+    {
+        foreach (var wire in wiresLeft)
+        {
+            wire.GetComponent<Image>().raycastTarget = true;
+        }
     }
 }

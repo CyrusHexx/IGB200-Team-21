@@ -124,11 +124,14 @@ public class Appliance : MonoBehaviour
 
     void TryTriggerWireGame()
     {
-        if (UnityEngine.Random.value <= 0.20f)
+        float chance = Random.Range(0f, 1f);  // This gives a random float between 0 and 1.
+
+        if (chance <= 0.20f)  // 20 percent chance
         {
             wireConnectGame.ShowGame();
         }
     }
+
 
 
     private void HandleGameCompleted()
