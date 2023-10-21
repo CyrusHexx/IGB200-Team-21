@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
     public bool poweredDown = false;
     public float currentLoad;
 
+    public GameObject tutorialPanel;
+    public Timer timerScript;
+    public AMPM ampmScript;
+    public MonoBehaviour ghostScript;
+    public Ghost[] ghostScripts;
+
     private void Awake()
     {
         if (instance == null)
@@ -26,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ShowTutorial();
+
         // Initialize the load slider's max value
         loadSlider.maxValue = maxLoad;
 
@@ -43,7 +51,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateAppliance();
+        if (!tutorialPanel.activeSelf)
+        {
+            UpdateAppliance();
+        }
     }
 
     private void UpdateAppliance()
@@ -122,5 +133,35 @@ public class GameManager : MonoBehaviour
         {
             mainLight.intensity = 1f;
         }
+    }
+
+    public void ShowTutorial()
+    {
+        tutorialPanel.SetActive(true); // Show the tutorial panel
+
+        // Deactivate the Timer and Ghost scripts
+        timerScript.enabled = false;
+        ampmScript.enabled = false;
+
+        foreach (var ghost in ghostScripts)
+        {
+            ghost.enabled = false;
+        }
+
+    }
+
+    public void HideTutorial()
+    {
+        tutorialPanel.SetActive(false); // Hide the tutorial panel
+
+        // Reactivate the Timer and Ghost scripts
+        timerScript.enabled = true;
+        ampmScript.enabled = true;
+
+        foreach (var ghost in ghostScripts)
+        {
+            ghost.enabled = true;
+        }
+
     }
 }
