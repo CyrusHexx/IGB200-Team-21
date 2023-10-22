@@ -75,7 +75,8 @@ public class GameManager : MonoBehaviour
         }
     }
     
-   public void resetLoad()
+   public void 
+        resetLoad()
     {
         overload = false;
         currentLoad = 0;

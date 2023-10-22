@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public GameObject firstFloor;
     public GameObject secondFloor;
     public GameObject basement;
+    public GameObject fuseBoxGamePanel;
+    public GameObject finishNodeObject;
+
 
     public GameObject firstFloorApps;
     public GameObject secondFloorApps;
@@ -40,18 +43,18 @@ public class PlayerController : MonoBehaviour
             renderer.enabled = false;
         }
 
+        fuseBoxGamePanel.SetActive(false);
+
     }
 
     private void Update()
     {
         MovePlayer(); // Handles player movement
         UpdateCamera(); // Updates Camera movement to follow player
-        
 
-        // Check for the "K" key press
+        // Check for the "E" key press
         if (Input.GetKeyDown(KeyCode.E))
         {
-
             // Cast a ray to detect nearby appliances
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
             foreach (Collider hitCollider in hitColliders)
@@ -64,18 +67,24 @@ public class PlayerController : MonoBehaviour
                 }
 
                 PowerFuseBox powerfusebox = hitCollider.GetComponent<PowerFuseBox>();
-                if (powerfusebox != null && powerfusebox.IsOn())
+                if (powerfusebox != null)
                 {
-                    powerfusebox.powerRestart();
-                    GameManager.instance.resetLoad();
-                    GhostOne.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
-                    GhostTwo.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
+                    // If player interacts with the fuse box and the game panel is not active
+                    if (!fuseBoxGamePanel.activeSelf)
+                    {
+                        // Turn off ghosts and activate fuse box game
+                        GhostOne.SetActive(false);
+                        GhostTwo.SetActive(false);
+                        fuseBoxGamePanel.SetActive(true);
+                    }
                 }
             }
         }
+
         checkFloor();
         checkCaught();
     }
+
 
     private void checkFloor()
     {
