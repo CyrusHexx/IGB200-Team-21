@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 700.0f; // Speed at which the player rotates
     private CharacterController controller; // Reference to the Character Controller component
     public GameObject Camera; // Reference to the Scene camera
-
+    public Animator animator;
     private float playerPosX;
     private float playerPosY;
     private float playerPosZ;
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(moveDirection);
         // Move the player using the Character Controller component
         controller.Move(moveDirection * Time.deltaTime * moveSpeed);
-
+        animator.SetFloat("Walking", controller.velocity.magnitude); // NATHAN was here
         // Rotate the player to face the movement direction
         if (moveDirection.x > 0 || moveDirection.z > 0)
         {
