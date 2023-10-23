@@ -45567,6 +45567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuseBoxGamePanel: {fileID: 1670019826}
   finishNodeObject: {fileID: 1343268814}
+  GhostOne: {fileID: 1232391798}
+  GhostTwo: {fileID: 1681984338}
 --- !u!4 &1676518544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 753832354169395586, guid: 2dee62a4ee04ba0469c80bd373218d77, type: 3}

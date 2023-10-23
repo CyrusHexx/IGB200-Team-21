@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class WireManager : MonoBehaviour
 {
-    public GameObject fuseBoxGamePanel; // Drag your FuseBoxGame panel here in the inspector
-    public GameObject finishNodeObject; // Public reference for easy assignment in the Inspector
+    public GameObject fuseBoxGamePanel;
+    public GameObject finishNodeObject;
+    public GameObject GhostOne;
+    public GameObject GhostTwo;
 
     void Start()
     {
@@ -25,21 +27,25 @@ public class WireManager : MonoBehaviour
         {
             Debug.Log("Puzzle completed!");
 
+            // Restart the power.
+            GameManager.instance.resetLoad();
+
+            // Increase ghost speeds.
+            GhostOne.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
+            GhostTwo.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
+
+            // Reactivate the ghosts.
+            GhostOne.SetActive(true);
+            GhostTwo.SetActive(true);
+
             // Hide the fuse box game panel after winning.
             if (fuseBoxGamePanel)
                 fuseBoxGamePanel.SetActive(false);
 
-            // Restart power immediately after completing the puzzle.
-            PowerFuseBox powerfusebox = FindObjectOfType<PowerFuseBox>();
-            if (powerfusebox)
-            {
-                powerfusebox.powerRestart();
-                GameManager.instance.resetLoad();
-            }
-
-            enabled = false;
+            enabled = false;  // Disable the WireManager after completing the puzzle.
         }
     }
+
 
 
     bool IsPuzzleComplete()
