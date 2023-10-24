@@ -146,12 +146,11 @@ public class PlayerController : MonoBehaviour
 
         // Create a movement direction based on the input
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), gravity, Input.GetAxis("Vertical")).normalized;
-        Debug.Log(moveDirection);
         // Move the player using the Character Controller component
         controller.Move(moveDirection * Time.deltaTime * moveSpeed);
         animator.SetFloat("Walking", controller.velocity.magnitude); // NATHAN was here
         // Rotate the player to face the movement direction
-        if (moveDirection.x > 0 || moveDirection.z > 0)
+        if (moveDirection.x != 0 || moveDirection.z != 0)
         {
             var rotateDirection = new Vector3(moveDirection.x, 0, moveDirection.z);
             

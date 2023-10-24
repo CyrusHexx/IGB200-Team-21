@@ -19,14 +19,14 @@ public class Ghost : MonoBehaviour
     private float speedRate = 2f;
 
 
-    public Appliance[] appliance = new Appliance[45]; 
+    public Appliance[] appliance = new Appliance[46]; 
     // Start is called before the first frame update
     void Start()
     {
         appliance = GameManager.instance.appliances;
         ghostNavMesh = GetComponent<NavMeshAgent>();
 
-        newPos = appliance[Random.Range(0, 45)].transform.position;
+        newPos = appliance[Random.Range(0, 46)].transform.position;
     }
 
     // Update is called once per frame
@@ -40,14 +40,14 @@ public class Ghost : MonoBehaviour
         overloadCheck = GameManager.instance.overload;
         if (overloadCheck == false)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0f);
+            ghost.transform.GetChild(0).gameObject.SetActive(false);
             newPosition();
             moveToPosition();
             updateSpeed();
         }
         else if (overloadCheck == true)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0.7f);
+            ghost.transform.GetChild(0).gameObject.SetActive(true);
             ChasePlayer();
             ghostNavMesh.speed = 20f;
         }
@@ -73,7 +73,7 @@ public class Ghost : MonoBehaviour
     {
         if (Vector3.Distance(ghost.transform.position, newPos) <= 3)
         {
-            newPos = appliance[Random.Range(0, 45)].transform.position;
+            newPos = appliance[Random.Range(0, 46)].transform.position;
         }
     }
 

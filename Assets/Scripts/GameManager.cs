@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!tutorialPanel.activeSelf)
+        ///Debug.Log(overload);
+        ///Debug.Log(currentLoad);
+        if (tutorialPanel.activeSelf == false && overload == false)
         {
             UpdateAppliance();
         }
@@ -75,12 +77,12 @@ public class GameManager : MonoBehaviour
         }
     }
     
-   public void 
-        resetLoad()
+   public void resetLoad()
     {
         overload = false;
         currentLoad = 0;
         loadSlider.value = currentLoad;
+        mainLight.intensity = 1f;
     }
     
     public void UpdateLoadMeter(float loadChange)
@@ -129,10 +131,6 @@ public class GameManager : MonoBehaviour
                 Appliance turnedOFFAppliance = onAppliances[i];
                 turnedOFFAppliance.ToggleState(true);
             }
-        }
-        else
-        {
-            mainLight.intensity = 1f;
         }
     }
 

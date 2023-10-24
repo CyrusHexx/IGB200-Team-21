@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Appliance : MonoBehaviour
 {
     public float loadContribution = 5.0f; // Load added to the meter when this appliance is on
-    public Color onColor = Color.red; // Color when the appliance is on
-    public Color offColor = Color.green; // Color when the appliance is off
+
     private bool isOn;
     public bool inGhostRange;
 
@@ -31,16 +30,8 @@ public class Appliance : MonoBehaviour
         // set initial state
         isOn = false;
 
-        // Update the load meter based on the initial state
-        if (isOn)
-        {
-            GameManager.instance.UpdateLoadMeter(loadContribution);
-        }
-
-        UpdateColor(); // Set the initial color
-
         wireConnectGame.OnGameCompleted += HandleGameCompleted;
-        Debug.Log("Subscribed to OnGameCompleted event!");
+        ///Debug.Log("Subscribed to OnGameCompleted event!");
 
     }
 
@@ -52,55 +43,60 @@ public class Appliance : MonoBehaviour
     
     private void CheckPlayerDistance()
     {
-        if (infoShown == false)
+        if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 8)
         {
-            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 15)
+            if (infoShown == false)
             {
                 appName = Instantiate(infoText, this.gameObject.transform);
                 appInfo = Instantiate(infoText, this.gameObject.transform);
                 appStatus = Instantiate(infoText, this.gameObject.transform);
 
+                var appNameMesh = appName.GetComponent<MeshRenderer>();
+                appNameMesh.enabled = true;
+
+                var appInfoMesh = appInfo.GetComponent<MeshRenderer>();
+                appInfoMesh.enabled = true;
+
+                var appStatusMesh = appStatus.GetComponent<MeshRenderer>();
+                appStatusMesh.enabled = true;
+
                 appName.transform.position += new Vector3(-5, 0, 10);
                 appInfo.transform.position += new Vector3(-5, 0, 8);
                 appStatus.transform.position += new Vector3(-5, 0, 6);
 
-                TextMesh nameInfo = appName.GetComponent<TextMesh>();
-                TextMesh costInfo = appInfo.GetComponent<TextMesh>();
-                TextMesh statusInfo = appStatus.GetComponent<TextMesh>();
-
-
-                nameInfo.text = this.gameObject.name;
-                costInfo.text = "Energy Cost: " + loadContribution;
-                if (isOn == false)
-                {
-                    statusInfo.text = "Status: OFF";
-                }
-                else if (isOn == true)
-                {
-                   if(loadContribution >= 10f)
-                    {
-                        statusInfo.text = "Status: DEFECTIVE";
-                    }
-                    else
-                    {
-                        statusInfo.text = "Status: ON";
-                    }
-                }
-                
                 infoShown = true;
+            }
+
+            TextMesh nameInfo = appName.GetComponent<TextMesh>();
+            TextMesh costInfo = appInfo.GetComponent<TextMesh>();
+            TextMesh statusInfo = appStatus.GetComponent<TextMesh>();
+
+
+            nameInfo.text = this.gameObject.name;
+            costInfo.text = "Energy Cost: " + loadContribution;
+            if (isOn == false)
+            {
+                statusInfo.text = "Status: OFF";
+            }
+            else if (isOn == true)
+            {
+                if(loadContribution >= 10f)
+                {
+                    statusInfo.text = "Status: DEFECTIVE";
+                }
+                else
+                {
+                    statusInfo.text = "Status: ON";
+                }
             }
         }
         else
         {
-            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) > 15)
-            {
-                Destroy(appName);
-                Destroy(appInfo);
-                Destroy(appStatus);
-                infoShown = false;
-            }
-        }
-        
+            Destroy(appName);
+            Destroy(appInfo);
+            Destroy(appStatus);
+            infoShown = false;
+        }  
     }
 
     public void ToggleState(bool overloaded)
@@ -108,25 +104,26 @@ public class Appliance : MonoBehaviour
         if (overloaded == false)
         {
             isOn = !isOn;
-            UpdateColor();
-            GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
-            if (!isOn) // If the appliance is switched off
+            ///turn vfx on/off with command
+            
+            if (isOn == false) // If the appliance is switched off
             {
+                Debug.Log("hit");
                 TryTriggerWireGame(); // Try to trigger the wire mini-game
             }
+            GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
         }
         else if (overloaded == true)
         {
             isOn = !isOn;
-            UpdateColor();
+            ///turn vfx on/off with command
         }
     }
 
     void TryTriggerWireGame()
     {
-        float chance = Random.Range(0f, 1f);
 
-        if (chance <= 0.20f)  // 20 percent chance
+        if (loadContribution >= 10)
         {
             wireConnectGame.ShowGame();
         }
@@ -136,12 +133,6 @@ public class Appliance : MonoBehaviour
     {
         Debug.Log("HandleGameCompleted called!");
         wireConnectGame.HideGame();
-    }
-
-
-    private void UpdateColor()
-    {
-        rend.material.color = isOn ? onColor : offColor; // Set the color based on the state
     }
 
     public bool IsOn() => isOn;
