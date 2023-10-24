@@ -43,7 +43,7 @@ public class Appliance : MonoBehaviour
     
     private void CheckPlayerDistance()
     {
-        if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 15)
+        if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 8)
         {
             if (infoShown == false)
             {

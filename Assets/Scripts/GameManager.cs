@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
         overload = false;
         currentLoad = 0;
         loadSlider.value = currentLoad;
+        mainLight.intensity = 1f;
     }
     
     public void UpdateLoadMeter(float loadChange)
@@ -130,10 +131,6 @@ public class GameManager : MonoBehaviour
                 Appliance turnedOFFAppliance = onAppliances[i];
                 turnedOFFAppliance.ToggleState(true);
             }
-        }
-        else
-        {
-            mainLight.intensity = 1f;
         }
     }
 

@@ -40,14 +40,14 @@ public class Ghost : MonoBehaviour
         overloadCheck = GameManager.instance.overload;
         if (overloadCheck == false)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0f);
+            ghost.transform.GetChild(0).gameObject.SetActive(false);
             newPosition();
             moveToPosition();
             updateSpeed();
         }
         else if (overloadCheck == true)
         {
-            ghost.GetComponent<MeshRenderer>().material.color = new Color(0.66f, 0f, 1f, 0.7f);
+            ghost.transform.GetChild(0).gameObject.SetActive(true);
             ChasePlayer();
             ghostNavMesh.speed = 20f;
         }
