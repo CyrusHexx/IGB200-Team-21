@@ -3374,7 +3374,7 @@ MonoBehaviour:
   maxLoad: 80
   overload: 0
   poweredDown: 0
-  currentLoad: 0
+  currentLoad: 79
   tutorialPanel: {fileID: 1483911128}
   timerScript: {fileID: 212543763}
   ampmScript: {fileID: 796167823}
@@ -3676,7 +3676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d507f44e61b6e9b49a35c7b662ad0d3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2682571
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d507f44e61b6e9b49a35c7b662ad0d3b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25295,7 +25295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154664785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.26654, y: -79.67, z: 46.072014}
+  m_LocalPosition: {x: 138.26654, y: -81.938255, z: 46.072014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39721,7 +39721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c39829bcf62d1341a41e130e50ebc7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c39829bcf62d1341a41e130e50ebc7b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39729,7 +39729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c39829bcf62d1341a41e130e50ebc7b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -81
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c39829bcf62d1341a41e130e50ebc7b, type: 3}
       propertyPath: m_LocalRotation.w

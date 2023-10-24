@@ -30,14 +30,8 @@ public class Appliance : MonoBehaviour
         // set initial state
         isOn = false;
 
-        // Update the load meter based on the initial state
-        if (isOn)
-        {
-            GameManager.instance.UpdateLoadMeter(loadContribution);
-        }
-
         wireConnectGame.OnGameCompleted += HandleGameCompleted;
-        Debug.Log("Subscribed to OnGameCompleted event!");
+        ///Debug.Log("Subscribed to OnGameCompleted event!");
 
     }
 
@@ -111,11 +105,13 @@ public class Appliance : MonoBehaviour
         {
             isOn = !isOn;
             ///turn vfx on/off with command
-            GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
-            if (!isOn) // If the appliance is switched off
+            
+            if (isOn == false) // If the appliance is switched off
             {
+                Debug.Log("hit");
                 TryTriggerWireGame(); // Try to trigger the wire mini-game
             }
+            GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
         }
         else if (overloaded == true)
         {

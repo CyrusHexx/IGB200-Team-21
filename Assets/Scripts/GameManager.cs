@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!tutorialPanel.activeSelf)
+        ///Debug.Log(overload);
+        ///Debug.Log(currentLoad);
+        if (tutorialPanel.activeSelf == false && overload == false)
         {
             UpdateAppliance();
         }
@@ -75,8 +77,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-   public void 
-        resetLoad()
+   public void resetLoad()
     {
         overload = false;
         currentLoad = 0;
