@@ -11,25 +11,29 @@ public class Appliance : MonoBehaviour
     public bool inGhostRange;
 
     private GameObject player;
-    public GameObject infoText;
-    private bool infoShown = false;
-    private GameObject appName;
+    private GameObject ApplianceUI;
     private GameObject appInfo;
-    private GameObject appStatus;
+    private bool infoShown = false;
+    private Text appName;
+    private Text appCost;
+    private Text appStatus;
 
     public WireConnect wireConnectGame;
+
+    private GameObject electricParticle;
+    private GameObject particleEffect;
 
     private Renderer rend; // Reference to the Renderer component
 
     private void Start()
     {
         player = GameObject.Find("Player");
-        infoText = GameObject.Find("Appliance Info");
+        ApplianceUI = GameObject.Find("App UI");
+        electricParticle = GameObject.Find("CFX_ElectricityBall");
         rend = GetComponent<Renderer>(); // Get the Renderer component
 
         // set initial state
         isOn = false;
-
         wireConnectGame.OnGameCompleted += HandleGameCompleted;
         ///Debug.Log("Subscribed to OnGameCompleted event!");
 
@@ -43,58 +47,43 @@ public class Appliance : MonoBehaviour
     
     private void CheckPlayerDistance()
     {
-        if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 8)
+        if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) <= 10)
         {
             if (infoShown == false)
             {
-                appName = Instantiate(infoText, this.gameObject.transform);
-                appInfo = Instantiate(infoText, this.gameObject.transform);
-                appStatus = Instantiate(infoText, this.gameObject.transform);
+                appInfo = Instantiate(ApplianceUI, this.gameObject.transform);
+                appName = appInfo.transform.GetChild(1).gameObject.GetComponent<Text>();
+                appCost = appInfo.transform.GetChild(2).gameObject.GetComponent<Text>();
+                appStatus = appInfo.transform.GetChild(3).gameObject.GetComponent<Text>();
 
-                var appNameMesh = appName.GetComponent<MeshRenderer>();
-                appNameMesh.enabled = true;
-
-                var appInfoMesh = appInfo.GetComponent<MeshRenderer>();
-                appInfoMesh.enabled = true;
-
-                var appStatusMesh = appStatus.GetComponent<MeshRenderer>();
-                appStatusMesh.enabled = true;
-
-                appName.transform.position += new Vector3(-5, 0, 10);
-                appInfo.transform.position += new Vector3(-5, 0, 8);
-                appStatus.transform.position += new Vector3(-5, 0, 6);
-
+                appInfo.SetActive(true);
+                appInfo.transform.position += new Vector3(-55, 13, -75);
                 infoShown = true;
             }
 
-            TextMesh nameInfo = appName.GetComponent<TextMesh>();
-            TextMesh costInfo = appInfo.GetComponent<TextMesh>();
-            TextMesh statusInfo = appStatus.GetComponent<TextMesh>();
-
-
-            nameInfo.text = this.gameObject.name;
-            costInfo.text = "Energy Cost: " + loadContribution;
+            
+            
+            appName.text = this.gameObject.name;
+            appCost.text = "Energy Cost: " + loadContribution;
             if (isOn == false)
             {
-                statusInfo.text = "Status: OFF";
+                appStatus.text = "Status: OFF";
             }
             else if (isOn == true)
             {
                 if(loadContribution >= 10f)
                 {
-                    statusInfo.text = "Status: DEFECTIVE";
+                    appStatus.text = "Status: BROKEN";
                 }
                 else
                 {
-                    statusInfo.text = "Status: ON";
+                    appStatus.text = "Status: ON";
                 }
             }
         }
         else
         {
-            Destroy(appName);
             Destroy(appInfo);
-            Destroy(appStatus);
             infoShown = false;
         }  
     }
@@ -105,17 +94,23 @@ public class Appliance : MonoBehaviour
         {
             isOn = !isOn;
             ///turn vfx on/off with command
-            
+            if (isOn == true)
+            {
+                particleEffect = Instantiate(electricParticle, this.gameObject.transform);
+                particleEffect.transform.localScale = new Vector3(6, 6, 6);
+            }
+
             if (isOn == false) // If the appliance is switched off
             {
-                Debug.Log("hit");
                 TryTriggerWireGame(); // Try to trigger the wire mini-game
+                Destroy(particleEffect);
             }
             GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);
         }
         else if (overloaded == true)
         {
             isOn = !isOn;
+            Destroy(particleEffect);
             ///turn vfx on/off with command
         }
     }
