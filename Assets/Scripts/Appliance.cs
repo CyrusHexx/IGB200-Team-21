@@ -14,9 +14,9 @@ public class Appliance : MonoBehaviour
     private GameObject ApplianceUI;
     private GameObject appInfo;
     private bool infoShown = false;
-    private Text appName;
-    private Text appCost;
-    private Text appStatus;
+    private TextMesh appName;
+    private TextMesh appCost;
+    private TextMesh appStatus;
 
     public WireConnect wireConnectGame;
 
@@ -52,12 +52,12 @@ public class Appliance : MonoBehaviour
             if (infoShown == false)
             {
                 appInfo = Instantiate(ApplianceUI, this.gameObject.transform);
-                appName = appInfo.transform.GetChild(1).gameObject.GetComponent<Text>();
-                appCost = appInfo.transform.GetChild(2).gameObject.GetComponent<Text>();
-                appStatus = appInfo.transform.GetChild(3).gameObject.GetComponent<Text>();
+                appName = appInfo.transform.GetChild(1).gameObject.GetComponent<TextMesh>();
+                appCost = appInfo.transform.GetChild(2).gameObject.GetComponent<TextMesh>();
+                appStatus = appInfo.transform.GetChild(3).gameObject.GetComponent<TextMesh>();
 
                 appInfo.SetActive(true);
-                appInfo.transform.position += new Vector3(-55, 13, -75);
+                appInfo.transform.position += new Vector3(-300, 0, 0);
                 infoShown = true;
             }
 
