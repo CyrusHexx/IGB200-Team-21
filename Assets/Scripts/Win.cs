@@ -7,4 +7,8 @@ public class Win : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void TryAgainButton()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }
