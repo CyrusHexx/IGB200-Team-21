@@ -7,4 +7,8 @@ public class Loss : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
