@@ -6,12 +6,12 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // Singleton reference
-    public Appliance[] appliances; // Reference to all appliances
-    public PowerFuseBox[] fuseBoxes; // reference to all power fuse boxes
-    public Slider loadSlider; // Reference to the UI Slider
+    public static GameManager instance; 
+    public Appliance[] appliances;
+    public PowerFuseBox[] fuseBoxes; 
+    public Slider loadSlider; 
     public Light mainLight;
-    public float maxLoad = 100f; // Maximum load before game over
+    public float maxLoad = 100f; 
     public bool overload = false;
     public bool poweredDown = false;
     public float currentLoad;
@@ -34,10 +34,8 @@ public class GameManager : MonoBehaviour
     {
         ShowTutorial();
 
-        // Initialize the load slider's max value
         loadSlider.maxValue = maxLoad;
 
-        // Calculate initial load based on the state of the appliances
         foreach (Appliance appliance in appliances)
         {
             if (appliance.IsOn())
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        loadSlider.value = currentLoad; // Set the initial value of the load slider
+        loadSlider.value = currentLoad;
     }
 
     private void Update()
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour
         currentLoad += loadChange;
         currentLoad = Mathf.Clamp(currentLoad, 0, maxLoad);
 
-        loadSlider.value = currentLoad; // Update the slider's value
+        loadSlider.value = currentLoad;
 
         ///Debug.Log("Current Load: " + currentLoad);
 
@@ -136,9 +134,8 @@ public class GameManager : MonoBehaviour
 
     public void ShowTutorial()
     {
-        tutorialPanel.SetActive(true); // Show the tutorial panel
+        tutorialPanel.SetActive(true); 
 
-        // Deactivate the Timer and Ghost scripts
         timerScript.enabled = false;
         ampmScript.enabled = false;
 
@@ -151,9 +148,8 @@ public class GameManager : MonoBehaviour
 
     public void HideTutorial()
     {
-        tutorialPanel.SetActive(false); // Hide the tutorial panel
+        tutorialPanel.SetActive(false); 
 
-        // Reactivate the Timer and Ghost scripts
         timerScript.enabled = true;
         ampmScript.enabled = true;
 

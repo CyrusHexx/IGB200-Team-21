@@ -23,14 +23,13 @@ public class Appliance : MonoBehaviour
     private GameObject electricParticle;
     private GameObject particleEffect;
 
-    private Renderer rend; // Reference to the Renderer component
-
+    private Renderer rend; 
     private void Start()
     {
         player = GameObject.Find("Player");
         ApplianceUI = GameObject.Find("App UI");
         electricParticle = GameObject.Find("CFX_ElectricityBall");
-        rend = GetComponent<Renderer>(); // Get the Renderer component
+        rend = GetComponent<Renderer>();
 
         // set initial state
         isOn = false;
@@ -100,9 +99,9 @@ public class Appliance : MonoBehaviour
                 particleEffect.transform.localScale = new Vector3(6, 6, 6);
             }
 
-            if (isOn == false) // If the appliance is switched off
+            if (isOn == false) 
             {
-                TryTriggerWireGame(); // Try to trigger the wire mini-game
+                TryTriggerWireGame();
                 Destroy(particleEffect);
             }
             GameManager.instance.UpdateLoadMeter(isOn ? loadContribution : -loadContribution);

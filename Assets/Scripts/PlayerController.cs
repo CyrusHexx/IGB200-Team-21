@@ -7,10 +7,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float interactionRange = 5.0f; // Range within which the player can interact with appliances
-    public float moveSpeed = 20.0f; // Speed at which the player moves
-    public float rotationSpeed = 700.0f; // Speed at which the player rotates
-    private CharacterController controller; // Reference to the Character Controller component
-    public GameObject Camera; // Reference to the Scene camera
+    public float moveSpeed = 20.0f; 
+    public float rotationSpeed = 700.0f;
+    private CharacterController controller; 
+    public GameObject Camera; 
     public Animator animator;
     private float playerPosX;
     private float playerPosY;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public GameObject basement;
     public GameObject fuseBoxGamePanel;
     public GameObject finishNodeObject;
+    public GameManager gameManager; 
+
 
 
     public GameObject firstFloorApps;
@@ -49,8 +51,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        MovePlayer(); // Handles player movement
-        UpdateCamera(); // Updates Camera movement to follow player
+        MovePlayer(); 
+        UpdateCamera();
 
         // Check for the "E" key press
         if (Input.GetKeyDown(KeyCode.E))
@@ -62,17 +64,16 @@ public class PlayerController : MonoBehaviour
                 Appliance appliance = hitCollider.GetComponent<Appliance>();
                 if (appliance != null && appliance.IsOn())
                 {
-                    // Toggle the state of the appliance if it's on
                     appliance.ToggleState(false);
                 }
 
                 PowerFuseBox powerfusebox = hitCollider.GetComponent<PowerFuseBox>();
                 if (powerfusebox != null)
                 {
-                    // If player interacts with the fuse box and the game panel is not active
-                    if (!fuseBoxGamePanel.activeSelf)
+                    // Check if overload is true and fuseBoxGamePanel is not active
+                    if (gameManager.overload && !fuseBoxGamePanel.activeSelf)
                     {
-                        // Turn off ghosts and activate fuse box game
+                        
                         GhostOne.SetActive(false);
                         GhostTwo.SetActive(false);
                         fuseBoxGamePanel.SetActive(true);
@@ -144,9 +145,8 @@ public class PlayerController : MonoBehaviour
             gravity -= gravityStr * Time.deltaTime;
         }
 
-        // Create a movement direction based on the input
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), gravity, Input.GetAxis("Vertical")).normalized;
-        // Move the player using the Character Controller component
+        
         controller.Move(moveDirection * Time.deltaTime * moveSpeed);
         animator.SetFloat("Walking", controller.velocity.magnitude); // NATHAN was here
         // Rotate the player to face the movement direction
@@ -161,12 +161,10 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCamera()
     {
-        // Get player's current position in the game world
         playerPosX = GameObject.Find("Player").transform.position.x;
         playerPosZ = GameObject.Find("Player").transform.position.z;
         playerPosY = GameObject.Find("Player").transform.position.y;
 
-        // Update the camera to be at the same positon as the player
         Camera.transform.position = new Vector3(playerPosX, playerPosY + 60, playerPosZ - 3);
     }
 

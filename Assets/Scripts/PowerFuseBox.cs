@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PowerFuseBox : MonoBehaviour
 {
-    public Color onColor = Color.red; // Color when the appliance is on
-    public Color offColor = Color.green; // Color when the appliance is off
+    public Color onColor = Color.red; 
+    public Color offColor = Color.green; 
     private bool isOn;
     public bool powerRestarted = false;
 
-    private Renderer rend; // Reference to the Renderer component
+    private Renderer rend; 
 
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>(); // Get the Renderer component
+        rend = GetComponent<Renderer>(); 
         isOn = false;
 
         UpdateColor();
@@ -29,12 +29,12 @@ public class PowerFuseBox : MonoBehaviour
     public void powerRestart()
     {
         isOn = !isOn;
-        UpdateColor(); // Update the color based on the new state      
+        UpdateColor(); 
     }
 
     private void UpdateColor()
     {
-        rend.material.color = isOn ? onColor : offColor; // Set the color based on the state
+        rend.material.color = isOn ? onColor : offColor; 
     }
 
     public bool IsOn() => isOn;

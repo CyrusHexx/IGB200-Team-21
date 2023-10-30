@@ -9,6 +9,7 @@ using System;
 public class WireConnect : MonoBehaviour
 {
     public Button[] wiresLeft;
+    public LineRenderer[] wireLineRenderers;
     public Image[] wiresRight;
 
     private Vector3[] initialPositionsLeft;
@@ -31,35 +32,17 @@ public class WireConnect : MonoBehaviour
         initialPositionsLeft = wiresLeft.Select(wire => wire.transform.position).ToArray();
         initialPositionsRight = wiresRight.Select(wire => wire.transform.position).ToArray();
 
-        /*
-        Shuffle(wiresLeft);
-        Shuffle(wiresRight);*/
-
         Shuffle(wiresLeft, wiresRight);
 
-        /*
         for (int i = 0; i < wiresLeft.Length; i++)
         {
-            wiresLeft[i].transform.position = initialPositionsLeft[i];
-            wiresRight[i].transform.position = initialPositionsRight[i];
+            wireLineRenderers[i].positionCount = 2;
+            wireLineRenderers[i].SetPosition(0, wiresLeft[i].transform.position);
+            wireLineRenderers[i].SetPosition(1, wiresLeft[i].transform.position);
         }
-        */
 
     }
 
-    /*
-    private void Shuffle<T>(T[] array)
-    {
-        int n = array.Length;
-        for (int i = n - 1; i > 0; i--)
-        {
-            int r = UnityEngine.Random.Range(0, i + 1);
-            T tmp = array[i];
-            array[i] = array[r];
-            array[r] = tmp;
-        }
-    }
-    */
     private void Shuffle(Button[] wireButtons, Image[] wireImages)
     {
         wireButtons = wireButtons.OrderBy(x => UnityEngine.Random.value).ToArray();
@@ -83,6 +66,12 @@ public class WireConnect : MonoBehaviour
     {
         if (draggedWire == null) return;
         draggedWire.transform.position = Input.mousePosition;
+
+        int index = Array.IndexOf(wiresLeft, draggedWire.GetComponent<Button>());
+        if (index != -1)
+        {
+            wireLineRenderers[index].SetPosition(1, Input.mousePosition);
+        }
     }
 
     private bool ColorsApproximatelyEqual(Color a, Color b, float tolerance = 0.05f)
@@ -98,6 +87,7 @@ public class WireConnect : MonoBehaviour
         if (draggedWire == null) return;
 
         bool isMatched = false;
+        int index = Array.IndexOf(wiresLeft, draggedWire.GetComponent<Button>()); 
 
         for (int i = 0; i < wiresRight.Length; i++)
         {
@@ -108,8 +98,13 @@ public class WireConnect : MonoBehaviour
                     draggedWire.transform.position = wiresRight[i].transform.position;
                     draggedWire.raycastTarget = false;
 
+                    if (index != -1)
+                    {
+                        wireLineRenderers[index].SetPosition(1, wiresRight[i].transform.position);
+                    }
+
                     isMatched = true;
-                    correctlyConnectedCount++; // Increment the counter
+                    correctlyConnectedCount++;
                     CheckWinCondition();
 
                     break;
@@ -120,15 +115,22 @@ public class WireConnect : MonoBehaviour
         if (!isMatched)
         {
             draggedWire.transform.position = initialPosition;
+
+            // Reset the LineRenderer's end position to the initial position
+            if (index != -1)
+            {
+                wireLineRenderers[index].SetPosition(1, wiresLeft[index].transform.position);
+            }
         }
 
         draggedWire = null;
     }
 
 
+
     private void CheckWinCondition()
     {
-        if (correctlyConnectedCount == wiresLeft.Length) // Check against total wires
+        if (correctlyConnectedCount == wiresLeft.Length)
         {
             Debug.Log("Game completed event being invoked!");
             OnGameCompleted?.Invoke();
@@ -149,7 +151,6 @@ public class WireConnect : MonoBehaviour
         this.gameObject.SetActive(true);
         correctlyConnectedCount = 0;
 
-        // Reset the event system's selected game object
         EventSystem.current.SetSelectedGameObject(null);
     }
 

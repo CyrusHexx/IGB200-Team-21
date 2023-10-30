@@ -17,7 +17,6 @@ public class WireManager : MonoBehaviour
 
     void Update()
     {
-        // Continuously check if the puzzle is completed
         CheckPuzzleCompletion();
     }
 
@@ -27,18 +26,14 @@ public class WireManager : MonoBehaviour
         {
             Debug.Log("Puzzle completed!");
 
-            // Restart the power.
             GameManager.instance.resetLoad();
 
-            // Increase ghost speeds.
             GhostOne.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
             GhostTwo.GetComponent<Ghost>().ghostNavMesh.speed = 10f;
 
-            // Reactivate the ghosts.
             GhostOne.SetActive(true);
             GhostTwo.SetActive(true);
 
-            // Hide the fuse box game panel after winning.
             if (fuseBoxGamePanel)
                 fuseBoxGamePanel.SetActive(false);
 
@@ -50,7 +45,6 @@ public class WireManager : MonoBehaviour
 
     bool IsPuzzleComplete()
     {
-        // Check if the Finish node's isOn property is true
         FuseBoxGameState finishNodeCollision = finishNodeObject.GetComponent<FuseBoxGameState>();
         return finishNodeCollision && finishNodeCollision.isOn;
     }
